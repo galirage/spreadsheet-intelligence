@@ -1,0 +1,465 @@
+# Role
+System Design and Analysis Expert
+
+# Objective
+To analyze a system design flowchart based on PowerPoint auto shapes, understand the shape and connector information, and prepare to answer questions about the diagram.
+
+# Instructions
+Follow the steps below to analyze the system design of the flowchart using the information from # Diagram Information (JSON format).
+
+# Thought Process
+1. **Reading Shapes and Clarifying Relationships**
+	- Read the # Diagram Information (JSON format) to clarify the structure and relationships between shapes and connectors.
+	- Analyze the coordinates (left, top, right, bottom) of the shapes to identify overlaps and containment relationships, inferring grouping if necessary.
+	- Pay close attention to multiple shapes (e.g., background shapes with text boxes on top) that may form a single component by verifying their positional relationships.	
+2.	**Identifying the Role of Each Shape**
+	- Identify the role of each shape (e.g., process, decision point, start/end, etc.).
+	- If a text box exists independently, determine whether it serves as an annotation or part of a component in the diagram by examining its position and content.
+	- The fill color (fillColor) and border color (borderColor) of the shapes can help identify their roles. For instance, shapes representing the same concept may share similar color schemes.
+3.	**Understanding the Start and End Points of Connectors**
+    Note: Be careful not to misinterpret annotation text near connectors as the targets pointed to by the connectors.
+	- Use the start point (startX, startY) and end point (endX, endY) of the connectors, along with the direction of the arrowheads (StartArrowHeadDirection, EndArrowHeadDirection), to determine the target shapes for the start and end points.
+	- WARNING: If multiple shapes are near the start or end points, refer to the arrowhead direction to identify which shape is indicated by considering the relative position from the connector points.
+	- WARNING: The start and end points do not necessarily touch the target shapes. Consider the overall structure of the diagram to determine the correct target.
+4.	**Interpreting the Role of Connectors**
+	- After identifying the target shapes connected by the start and end points, interpret the meaning of the connector.
+	- If annotation text is near the connector, it often describes the relationship indicated by the connector.
+	- A bidirectional arrow represents mutual interaction, while a one-way arrow shows the flow in one direction. If no arrowheads are present, the connector may simply indicate a link between two elements.
+
+# Diagram Information (JSON format)
+
+{
+    "connectors": [
+        {
+            "id": 17,
+            "type": "straightConnector1",
+            "arrowType": "bidirectional",
+            "lineType": "dashed",
+            "color": "#000000",
+            "startX": "3.05",
+            "startY": "3.16",
+            "StartArrowHeadDirection": "left",
+            "endX": "6.59",
+            "endY": "3.16",
+            "EndArrowHeadDirection": "left"
+        },
+        {
+            "id": 18,
+            "type": "straightConnector1",
+            "arrowType": "bidirectional",
+            "lineType": "dashed",
+            "color": "#000000",
+            "startX": "1.94",
+            "startY": "4.38",
+            "StartArrowHeadDirection": "up",
+            "endX": "1.94",
+            "endY": "5.47",
+            "EndArrowHeadDirection": "down"
+        },
+        {
+            "id": 20,
+            "type": "bentConnector3",
+            "arrowType": "bidirectional",
+            "lineType": "solid",
+            "color": "#ff0000",
+            "startX": "3.27",
+            "startY": "5.47",
+            "StartArrowHeadDirection": "down",
+            "endX": "6.59",
+            "endY": "3.94",
+            "EndArrowHeadDirection": "right"
+        },
+        {
+            "id": 22,
+            "type": "bentConnector3",
+            "arrowType": "bidirectional",
+            "lineType": "solid",
+            "color": "#000000",
+            "startX": "5.31",
+            "startY": "5.47",
+            "StartArrowHeadDirection": "down",
+            "endX": "6.59",
+            "endY": "4.35",
+            "EndArrowHeadDirection": "right"
+        },
+        {
+            "id": 23,
+            "type": "bentConnector3",
+            "arrowType": "bidirectional",
+            "lineType": "solid",
+            "color": "#000000",
+            "startX": "8.93",
+            "startY": "3.72",
+            "StartArrowHeadDirection": "left",
+            "endX": "10.24",
+            "endY": "5.5",
+            "EndArrowHeadDirection": "down"
+        },
+        {
+            "id": 28,
+            "type": "bentConnector3",
+            "arrowType": "oneWay",
+            "lineType": "solid",
+            "color": "#000000",
+            "startX": "5.31",
+            "startY": "1.71",
+            "StartArrowHeadDirection": "none",
+            "endX": "7.77",
+            "endY": "2.16",
+            "EndArrowHeadDirection": "down"
+        },
+        {
+            "id": 6,
+            "type": "straightConnector1",
+            "arrowType": "bidirectional",
+            "color": "#000000",
+            "lineType": "dashed",
+            "startX": "7.79",
+            "startY": "4.59",
+            "StartArrowHeadDirection": "up",
+            "endX": "7.79",
+            "endY": "5.47",
+            "EndArrowHeadDirection": "down"
+        }
+    ],
+    "shapes": [
+        {
+            "id": 56,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 1.08,
+            "y_min": 2.75,
+            "x_max": 2.9,
+            "y_max": 4.17
+        },
+        {
+            "id": 58,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 1.2,
+            "y_min": 3.62,
+            "x_max": 2.75,
+            "y_max": 4.08,
+            "text": {
+                "content": "Azure AI Document Intelligence",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 54,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 6.84,
+            "y_min": 2.75,
+            "x_max": 8.67,
+            "y_max": 4.54
+        },
+        {
+            "id": 55,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 7.04,
+            "y_min": 3.97,
+            "x_max": 8.47,
+            "y_max": 4.25,
+            "text": {
+                "content": "Azure App Service",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 50,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 1.65,
+            "y_min": 5.6,
+            "x_max": 3.54,
+            "y_max": 7.46
+        },
+        {
+            "id": 51,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 1.86,
+            "y_min": 6.87,
+            "x_max": 3.34,
+            "y_max": 7.15,
+            "text": {
+                "content": "Azure Cognitive Search",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 46,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 4.41,
+            "y_min": 5.61,
+            "x_max": 6.3,
+            "y_max": 7.46
+        },
+        {
+            "id": 47,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 4.61,
+            "y_min": 6.87,
+            "x_max": 6.09,
+            "y_max": 7.16,
+            "text": {
+                "content": "Azure OpenAI",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 38,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 9.26,
+            "y_min": 5.58,
+            "x_max": 11.17,
+            "y_max": 7.46
+        },
+        {
+            "id": 39,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 9.46,
+            "y_min": 6.96,
+            "x_max": 10.96,
+            "y_max": 7.25,
+            "text": {
+                "content": "Azure Monitor",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 36,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 11.92,
+            "y_min": 5.58,
+            "x_max": 13.83,
+            "y_max": 7.45
+        },
+        {
+            "id": 37,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 12.12,
+            "y_min": 6.85,
+            "x_max": 13.62,
+            "y_max": 7.14,
+            "text": {
+                "content": "Microsoft Entra",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 32,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 11.79,
+            "y_min": 2.71,
+            "x_max": 13.62,
+            "y_max": 4.5
+        },
+        {
+            "id": 33,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 11.99,
+            "y_min": 3.93,
+            "x_max": 13.42,
+            "y_max": 4.21,
+            "text": {
+                "content": "Key Vault",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 19,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 4.23,
+            "y_min": 2.84,
+            "x_max": 5.41,
+            "y_max": 3.1,
+            "text": {
+                "content": "Extract content",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 21,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 3.3,
+            "y_min": 4.77,
+            "x_max": 4.35,
+            "y_max": 5.03,
+            "text": {
+                "content": "Chat with file",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 26,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 5.36,
+            "y_min": 4.51,
+            "x_max": 6.85,
+            "y_max": 4.77,
+            "text": {
+                "content": "Prompt + Response",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 27,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 9.14,
+            "y_min": 4.77,
+            "x_max": 10.32,
+            "y_max": 5.03,
+            "text": {
+                "content": "App Monitoring",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 29,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 3.62,
+            "y_min": 1.57,
+            "x_max": 5.43,
+            "y_max": 1.84,
+            "text": {
+                "content": "https://chat.yourorg.com",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 2,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 0.82,
+            "y_min": 4.78,
+            "x_max": 1.87,
+            "y_max": 5.05,
+            "text": {
+                "content": "Index content",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 3,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 6.78,
+            "y_min": 5.58,
+            "x_max": 8.7,
+            "y_max": 7.45
+        },
+        {
+            "id": 4,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 6.99,
+            "y_min": 6.85,
+            "x_max": 8.49,
+            "y_max": 7.14,
+            "text": {
+                "content": "Azure Cosmos DB",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 9,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 6.76,
+            "y_min": 4.79,
+            "x_max": 7.94,
+            "y_max": 5.23,
+            "text": {
+                "content": "Conversation History",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        }
+    ]
+}
+
+Let's do it step by step.
+First, please do the following:
+1. **Reading Shapes and Clarifying Relationships**  
+2. **Identifying the Role of Each Shape**  
+
+# Output Format  
+Please create the answer in the following format.  
+
+- components  
+    - Name (Component name or role)  
+       - Shape ID(s)  
+       - Position (x_min, y_min) - (x_max, y_max)  
+    
+- Non-component elements  
+    - Name (e.g., content of a text box)  
+        - Shape ID(s)  
+        - Position (x_min, y_min) - (x_max, y_max)  
