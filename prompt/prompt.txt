@@ -1,0 +1,489 @@
+# 役割  
+システム設計解析の専門家
+
+# 目的  
+パワーポイントのオートシェイプを基に、内部のシステム設計のフローチャートを解析し、図形情報（shapeとconnector）を理解した上で、図の内容に関する質問に答える準備を整える。  
+
+# 指示  
+以下の手順に従い、# 図に関する情報（JSON形式） の情報をもとに、フローチャートのシステム設計を解析してください。  
+
+# 思考プロセス  
+1. **図形の読み取りと関係性の明確化**  
+   - # 図に関する情報（JSON形式） を読み取り、shape（図形）とconnector（コネクタ）の構造や関係性を明確にする。  
+   - 図形の座標（left, top, right, bottom）を用いて、図形同士の重なりや包含関係を分析し、グループ化を推測する。  
+   - 複数の図形（例：背景の図形とその上のテキストボックス）が一つのコンポーネントを構成している可能性があるため、注意深く位置関係を確認する。  
+
+2. **各shapeの役割の特定**  
+   - 各shapeの役割（例：プロセス、決定ポイント、開始/終了など）を特定する。  
+   - テキストボックスが単独で存在する場合、それが注釈なのか、図を構成するコンポーネントに含まれるものなのかを、位置関係や内容から判断する。   
+   - テキストの内容がサービス名やプロセス名であれば、コンポーネントの一部である可能性が高い。 
+   - shapeの塗りつぶし色(fillColor)、枠線色(borderColor)も、どのような役割のshapeなのかを理解する手助けになる。例えば、同じ概念のshapeであれば同じような配色などになるだろう。
+
+3. **コネクタの開始点、終了点が指し示す対象の把握**
+ **注意：コネクタの近傍に位置するコネクタに対する注釈テキストをコネクタが指し示す対象とj勘違いしやすいので、注意すること**  
+   - コネクタの開始点（startX, startY）と終了点（endX, endY）、そして各点の矢頭の方向の情報 (StartArrowHeadDirection, EndArrowHeadDirection)を用いて、開始点、終了点のそれぞれが指し示す対象を考えてください。
+   - **WARNING**: 開始点、終了点の近くに複数図形が存在する場合、コネクタの各点の矢頭の方向の情報 (StartArrowHeadDirection, EndArrowHeadDirection)から、始点、終了点から見てどの方向に位置している図形を指し示しているのかを参考に特定が可能である。
+   - **WARNING**: 開始点、終了点は指し示している対象と接しているとは限らない。図の全体構造の意味も踏まえた上で、特定を行なってください。
+
+4. **コネクタの役割の解釈**
+  - 3. **コネクタの開始点、終了点が指し示す対象の把握**ができた後、そのコネクタがどういう意味なのか判断してください。
+  - コネクタの近傍に注釈テキストなどがある場合はそれはコネクタが示す関係性などを説明していることが多い
+  - また矢印が双方向であれば相互的なやり取りを表すし、一方向であればその方向の流れを表す。どちらにも矢頭がなければ2つを結んでいるに過ぎないかも知れない。
+
+# 図に関する情報（JSON形式）
+
+{
+    "connectors": [
+        {
+            "id": 17,
+            "type": "straightConnector1",
+            "arrowType": "bidirectional",
+            "lineType": "dashed",
+            "color": "#000000",
+            "startX": "3.05",
+            "startY": "3.16",
+            "StartArrowHeadDirection": "left",
+            "endX": "6.59",
+            "endY": "3.16",
+            "EndArrowHeadDirection": "left"
+        },
+        {
+            "id": 18,
+            "type": "straightConnector1",
+            "arrowType": "bidirectional",
+            "lineType": "dashed",
+            "color": "#000000",
+            "startX": "1.94",
+            "startY": "4.38",
+            "StartArrowHeadDirection": "up",
+            "endX": "1.94",
+            "endY": "5.47",
+            "EndArrowHeadDirection": "down"
+        },
+        {
+            "id": 20,
+            "type": "bentConnector3",
+            "arrowType": "bidirectional",
+            "lineType": "solid",
+            "color": "#ff0000",
+            "startX": "3.27",
+            "startY": "5.47",
+            "StartArrowHeadDirection": "down",
+            "endX": "6.59",
+            "endY": "3.94",
+            "EndArrowHeadDirection": "right"
+        },
+        {
+            "id": 22,
+            "type": "bentConnector3",
+            "arrowType": "bidirectional",
+            "lineType": "solid",
+            "color": "#000000",
+            "startX": "5.31",
+            "startY": "5.47",
+            "StartArrowHeadDirection": "down",
+            "endX": "6.59",
+            "endY": "4.35",
+            "EndArrowHeadDirection": "right"
+        },
+        {
+            "id": 23,
+            "type": "bentConnector3",
+            "arrowType": "bidirectional",
+            "lineType": "solid",
+            "color": "#000000",
+            "startX": "8.93",
+            "startY": "3.72",
+            "StartArrowHeadDirection": "left",
+            "endX": "10.24",
+            "endY": "5.5",
+            "EndArrowHeadDirection": "down"
+        },
+        {
+            "id": 28,
+            "type": "bentConnector3",
+            "arrowType": "oneWay",
+            "lineType": "solid",
+            "color": "#000000",
+            "startX": "5.31",
+            "startY": "1.71",
+            "StartArrowHeadDirection": "none",
+            "endX": "7.77",
+            "endY": "2.16",
+            "EndArrowHeadDirection": "down"
+        },
+        {
+            "id": 6,
+            "type": "straightConnector1",
+            "arrowType": "bidirectional",
+            "color": "#000000",
+            "lineType": "dashed",
+            "startX": "7.79",
+            "startY": "4.59",
+            "StartArrowHeadDirection": "up",
+            "endX": "7.79",
+            "endY": "5.47",
+            "EndArrowHeadDirection": "down"
+        }
+    ],
+    "shapes": [
+        {
+            "id": 56,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 1.08,
+            "y_min": 2.75,
+            "x_max": 2.9,
+            "y_max": 4.17
+        },
+        {
+            "id": 58,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 1.2,
+            "y_min": 3.62,
+            "x_max": 2.75,
+            "y_max": 4.08,
+            "text": {
+                "content": "Azure AI Document Intelligence",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 54,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 6.84,
+            "y_min": 2.75,
+            "x_max": 8.67,
+            "y_max": 4.54
+        },
+        {
+            "id": 55,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 7.04,
+            "y_min": 3.97,
+            "x_max": 8.47,
+            "y_max": 4.25,
+            "text": {
+                "content": "Azure App Service",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 50,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 1.65,
+            "y_min": 5.6,
+            "x_max": 3.54,
+            "y_max": 7.46
+        },
+        {
+            "id": 51,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 1.86,
+            "y_min": 6.87,
+            "x_max": 3.34,
+            "y_max": 7.15,
+            "text": {
+                "content": "Azure Cognitive Search",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 46,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 4.41,
+            "y_min": 5.61,
+            "x_max": 6.3,
+            "y_max": 7.46
+        },
+        {
+            "id": 47,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 4.61,
+            "y_min": 6.87,
+            "x_max": 6.09,
+            "y_max": 7.16,
+            "text": {
+                "content": "Azure OpenAI",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 38,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 9.26,
+            "y_min": 5.58,
+            "x_max": 11.17,
+            "y_max": 7.46
+        },
+        {
+            "id": 39,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 9.46,
+            "y_min": 6.96,
+            "x_max": 10.96,
+            "y_max": 7.25,
+            "text": {
+                "content": "Azure Monitor",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 36,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 11.92,
+            "y_min": 5.58,
+            "x_max": 13.83,
+            "y_max": 7.45
+        },
+        {
+            "id": 37,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 12.12,
+            "y_min": 6.85,
+            "x_max": 13.62,
+            "y_max": 7.14,
+            "text": {
+                "content": "Microsoft Entra",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 32,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 11.79,
+            "y_min": 2.71,
+            "x_max": 13.62,
+            "y_max": 4.5
+        },
+        {
+            "id": 33,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 11.99,
+            "y_min": 3.93,
+            "x_max": 13.42,
+            "y_max": 4.21,
+            "text": {
+                "content": "Key Vault",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 19,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 4.23,
+            "y_min": 2.84,
+            "x_max": 5.41,
+            "y_max": 3.1,
+            "text": {
+                "content": "Extract content",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 21,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 3.3,
+            "y_min": 4.77,
+            "x_max": 4.35,
+            "y_max": 5.03,
+            "text": {
+                "content": "Chat with file",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 26,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 5.36,
+            "y_min": 4.51,
+            "x_max": 6.85,
+            "y_max": 4.77,
+            "text": {
+                "content": "Prompt + Response",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 27,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 9.14,
+            "y_min": 4.77,
+            "x_max": 10.32,
+            "y_max": 5.03,
+            "text": {
+                "content": "App Monitoring",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 29,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 3.62,
+            "y_min": 1.57,
+            "x_max": 5.43,
+            "y_max": 1.84,
+            "text": {
+                "content": "https://chat.yourorg.com",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 2,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 0.82,
+            "y_min": 4.78,
+            "x_max": 1.87,
+            "y_max": 5.05,
+            "text": {
+                "content": "Index content",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 3,
+            "shapeType": "roundRect",
+            "fillColor": "bg2",
+            "borderColor": "tx2",
+            "x_min": 6.78,
+            "y_min": 5.58,
+            "x_max": 8.7,
+            "y_max": 7.45
+        },
+        {
+            "id": 4,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 6.99,
+            "y_min": 6.85,
+            "x_max": 8.49,
+            "y_max": 7.14,
+            "text": {
+                "content": "Azure Cosmos DB",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        },
+        {
+            "id": 9,
+            "shapeType": "rect",
+            "fillColor": "none",
+            "borderColor": "none",
+            "x_min": 6.76,
+            "y_min": 4.79,
+            "x_max": 7.94,
+            "y_max": 5.23,
+            "text": {
+                "content": "Conversation History",
+                "fontColor": "windowText",
+                "fontSize": "1100",
+                "alignment": "center"
+            }
+        }
+    ]
+}
+
+1つ1つやっていきましょう。
+まずは、
+1. **図形の読み取りと関係性の明確化**  
+2. **各shapeの役割の特定**  
+をお願いします
+
+# 出力形式  
+以下の形式で回答を作成してください。  
+
+- components
+    - 名前（コンポーネント名や役割）
+       - 構成するshapeのID
+       - 位置: (x_min, y_min) - (x_max, y_max)
+    
+- コンポーネント以外の構成物
+    - 名前 (テキストボックスの内容など)
+        - 構成するshapeのID
+        - 位置: (x_min, y_min) - (x_max, y_max)
+
+
+
+
+はい、続いて、
+3. **コネクタの開始点、終了点が指し示す対象の把握** , 4. **コネクタの役割の解釈**
+をお願いします。
+
+ **注意（必ず守れ）：コネクタの開始点、終了点の間にある図形はコネクタが示す関係性を注釈する役割のことが多いので、指し示す対象と決して勘違いしてはならない。特にコンポーネント以外の構成物と判断された図形は注釈する役割のことが多いので、コンポーネントなどと判断された図形を優先して指し示す対象として判断すること** 
+
+# 出力形式
+- connectors
+  - connector_id: 
+  - 開始点: (startX, startY)
+  - 終了点: (endX, endY)
+  - 対象：
+    - 開始点：対象となっているコンポーネントや構成物など
+    - 終了点：対象となっているコンポーネントや構成物など
+  - 注釈：（コネクタが示す対象間の関係性）
