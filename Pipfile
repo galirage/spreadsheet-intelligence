@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-dotenv = "*"
+ipython = "*"
+pillow = "*"
+spreadsheet-intelligence = {file = ".", editable = true}
+matplotlib = "*"
+sphinx = "*"
+pydata-sphinx-theme = "*"
+langchain-openai = "*"
+langchain-core = "*"
+langgraph = "*"
+
+[dev-packages]
+pytest = "*"
+ruff = "*"
+click = "*"
+pympler = "*"
+setuptools = "*"
+wheel = "*"
+twine = "*"
+
+[requires]
+python_version = "3.12"
