@@ -12,8 +12,8 @@ from sphinx.jinja2glue import BuiltinTemplateLoader
 sys.path.insert(0, os.path.abspath('../../'))
 
 project = 'spreadsheet-intelligence'
-copyright = '2024, Shue Shiinoki, Galirage, Inc.'
-author = 'Shue Shiinoki, Galirage, Inc.'
+copyright = 'Galirage, Inc'
+author = 'Galirage, Inc.'
 release = '0.0.1'
 
 # -- General configuration ---------------------------------------------------

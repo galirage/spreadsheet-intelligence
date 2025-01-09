@@ -63,6 +63,18 @@ class ClrScheme:
         hlink: xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:hlink
         folHlink: xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:folHlink
     """
+    dk1: Union[SysClr, SrgbClr]
+    lt1: Union[SysClr, SrgbClr]
+    dk2: Union[SysClr, SrgbClr]
+    lt2: Union[SysClr, SrgbClr]
+    accent1: Union[SysClr, SrgbClr]
+    accent2: Union[SysClr, SrgbClr]
+    accent3: Union[SysClr, SrgbClr]
+    accent4: Union[SysClr, SrgbClr]
+    accent5: Union[SysClr, SrgbClr]
+    accent6: Union[SysClr, SrgbClr]
+    hlink: Union[SysClr, SrgbClr]
+    folHlink: Union[SysClr, SrgbClr]
 
     @staticmethod
     def map_color(val: str) -> str:
