@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from typing import Annotated
 from typing_extensions import TypedDict
+import base64
 
 from langchain_openai import ChatOpenAI
 from langchain_core.tools import tool
@@ -10,21 +11,20 @@ from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 from langgraph.checkpoint.memory import MemorySaver
 
-from spreadsheet_intelligence.core.excel_autoshape_loader import ExcelAutoshapeLoader
-# from prompt.jp_prompt import (
-#     shape_analysis_user_message,
-#     connector_analysis_user_message,
-#     analysis_system_message,
-#     chatbot_system_message,
-#     chatbot_user_message,
-# )
-from prompt.en_prompt import (
+from prompt.jp_prompt_img import (
     shape_analysis_user_message,
     connector_analysis_user_message,
     analysis_system_message,
     chatbot_system_message,
     chatbot_user_message,
 )
+# from prompt.en_prompt import (
+#     shape_analysis_user_message,
+#     connector_analysis_user_message,
+#     analysis_system_message,
+#     chatbot_system_message,
+#     chatbot_user_message,
+# )
 
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -33,7 +33,7 @@ llm = ChatOpenAI(api_key=OPENAI_API_KEY, temperature=0, model=model_name)
 
 
 class State(TypedDict):
-    autoshape_data: str  # json形式のautoshapeの情報
+    autoshape_data: str  # base64形式の画像データ
     shape_data: str  # 解析したshapeの情報
     connector_data: str  # 解析したconnectorの情報
     ready_to_chatbot: bool  # chatbotを呼ぶかどうか
@@ -48,24 +48,25 @@ graph_builder = StateGraph(State)
 
 
 # Nodes
+# TODO: ここを画像を取得するように変更する
 def fetch_diagram_data(state: State):
-    """Excelファイルを読み込み、shapeやconnectorといったautoshapeの情報をJSON形式で返す"""
-    loader = ExcelAutoshapeLoader("data/xlsx/flow_not_recurrent_group.xlsx")
-    loader.load()
-    diagram_json = loader.export()
-    with open("data/json/diagram_json.json", "w") as f:
-        f.write(diagram_json)
-    return {"autoshape_data": diagram_json}
+    """画像ファイルを読み込み、base64形式で返す"""
+    # with open("data/images/flow_not_recurrent_group.png", "rb") as image_file:
+    with open("data/images/flow2.png", "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
+    return {"autoshape_data": encoded_string}
 
 
 def shape_analysis(state: State):
     """取得したautoshape情報からshapeの情報を分析する"""
+    prompt_for_shape_analysis = shape_analysis_user_message
     messages = [
         SystemMessage(content=analysis_system_message),
         HumanMessage(
-            content=shape_analysis_user_message.format(
-                diagram_json=state["autoshape_data"]
-            )
+            content=[
+                {"type": "text", "text": prompt_for_shape_analysis},
+                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{state['autoshape_data']}"}},
+            ]
         ),
     ]
     response = llm.invoke(messages)
@@ -80,9 +81,10 @@ def connector_analysis(state: State):
     messages = [
         SystemMessage(content=analysis_system_message),
         HumanMessage(
-            content=connector_analysis_user_message.format(
-                diagram_json=state["autoshape_data"], shape_data=state["shape_data"]
-            )
+            content=[
+                {"type": "text", "text": connector_analysis_user_message.format(shape_data=state["shape_data"])},
+                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{state['autoshape_data']}"}},
+            ]
         ),
     ]
     response = llm.invoke(messages)
@@ -98,12 +100,14 @@ def chatbot(state: State):
     messages = [
         SystemMessage(content=chatbot_system_message),
         HumanMessage(
-            content=chatbot_user_message.format(
-                user_question=state["user_question"],
-                diagram_json=state["autoshape_data"],
-                shape_data=state["shape_data"],
-                connector_data=state["connector_data"],
-            )
+            content=[
+                {"type": "text", "text": chatbot_user_message.format(
+                    user_question=state["user_question"],
+                    shape_data=state["shape_data"],
+                    connector_data=state["connector_data"],
+                )},
+                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{state['autoshape_data']}"}},
+            ]
         ),
     ]
     response = llm.invoke(messages)
@@ -136,10 +140,21 @@ state = State(
 )
 
 
-for event in graph.stream(state, config, stream_mode="values"):
-    # print(event)
-    for message in event["messages"]:
-        print("--------------------------------")
-        print(message.content)
-        print("\n\n\n\n")
+with open("data/chat_log_jp_prompt_img.txt", "w") as f:
+    # with open("data/chat_log_jp_simple_prompt.txt", "w") as f:
+    for event in graph.stream(state, config, stream_mode="values"):
+        # print(event)
+        for message in event["messages"]:
+            f.write("--------------------------------\n")
+            f.write(f"Type: {type(message).__name__}\n")
+            for content in message.content:
+                if isinstance(content, str):
+                    f.write(content)
+                else:
+                    print(type(content))
+            f.write("\n\n")
+            print("--------------------------------")
+            print(f"Type: {type(message).__name__}")
+            print(message.content)
+            print("\n\n\n\n")
     print("--------------------------------")

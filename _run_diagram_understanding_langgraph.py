@@ -42,11 +42,6 @@ class State(TypedDict):
         list, add_messages
     ]  # 今回は特に使わないが、メッセージを保存しておくために追加している
 
-
-memory_saver = MemorySaver()
-graph_builder = StateGraph(State)
-
-
 # Nodes
 def fetch_diagram_data(state: State):
     """Excelファイルを読み込み、shapeやconnectorといったautoshapeの情報をJSON形式で返す"""
@@ -110,36 +105,51 @@ def chatbot(state: State):
     return {"messages": state["messages"] + messages + [response], "user_question": ""}
 
 
-graph_builder.add_node("fetch_diagram_data", fetch_diagram_data)
-graph_builder.add_node("shape_analysis", shape_analysis)
-graph_builder.add_node("connector_analysis", connector_analysis)
-graph_builder.add_node("chatbot", chatbot)
-graph_builder.add_edge(START, "fetch_diagram_data")
-graph_builder.add_edge("fetch_diagram_data", "shape_analysis")
-graph_builder.add_edge("shape_analysis", "connector_analysis")
-graph_builder.add_edge("connector_analysis", "chatbot")
-graph_builder.add_edge("chatbot", END)
+if __name__ == "__main__":
+    memory_saver = MemorySaver()
+    graph_builder = StateGraph(State)
+    # JSON形式のautoshape情報を取得してstateに反映
+    graph_builder.add_node("fetch_diagram_data", fetch_diagram_data)
+    # autoshape情報解析その1：shapeの情報を分析してstateに反映
+    graph_builder.add_node("shape_analysis", shape_analysis)
+    # autoshape情報解析その2：connectorの情報を分析してstateに反映
+    graph_builder.add_node("connector_analysis", connector_analysis)
+    # chatbotのメッセージを生成してstateに反映
+    graph_builder.add_node("chatbot", chatbot)
+    # ノードの接続
+    graph_builder.add_edge(START, "fetch_diagram_data")
+    graph_builder.add_edge("fetch_diagram_data", "shape_analysis")
+    graph_builder.add_edge("shape_analysis", "connector_analysis")
+    graph_builder.add_edge("connector_analysis", "chatbot")
+    graph_builder.add_edge("chatbot", END)
 
-graph = graph_builder.compile(checkpointer=memory_saver)
+    graph = graph_builder.compile(checkpointer=memory_saver)
 
-graph.get_graph().draw_mermaid_png(output_file_path="graph.png")
+    graph.get_graph().draw_mermaid_png(output_file_path="graph.png")
 
-config = {"configurable": {"thread_id": "1"}}
-user_question = "赤いコネクタは何と何を繋いでいるか"
-state = State(
-    autoshape_data="",
-    shape_data="",
-    connector_data="",
-    messages=[],
-    user_question=user_question,
-    ready_to_chatbot=False,
-)
+    config = {"configurable": {"thread_id": "1"}}
+    # user_question = "赤いコネクタは何と何を繋いでいるか"
+    user_question = "緑色のコネクタは何を繋いでいるか"
+    state = State(
+        autoshape_data="",
+        shape_data="",
+        connector_data="",
+        messages=[],
+        user_question=user_question,
+        ready_to_chatbot=False,
+    )
 
-
-for event in graph.stream(state, config, stream_mode="values"):
-    # print(event)
-    for message in event["messages"]:
+    with open("data/chat_log_en_simple_prompt.txt", "w") as f:
+    # with open("data/chat_log_jp_simple_prompt.txt", "w") as f:
+        for event in graph.stream(state, config, stream_mode="values"):
+            # print(event)
+            for message in event["messages"]:
+                f.write("--------------------------------\n")
+                f.write(f"Type: {type(message).__name__}\n")
+                f.write(message.content)
+                f.write("\n\n")
+                print("--------------------------------")
+                print(f"Type: {type(message).__name__}")
+                print(message.content)
+                print("\n\n\n\n")
         print("--------------------------------")
-        print(message.content)
-        print("\n\n\n\n")
-    print("--------------------------------")
