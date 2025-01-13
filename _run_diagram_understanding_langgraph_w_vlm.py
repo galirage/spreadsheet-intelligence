@@ -11,20 +11,20 @@ from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 from langgraph.checkpoint.memory import MemorySaver
 
-from prompt.jp_prompt_img import (
-    shape_analysis_user_message,
-    connector_analysis_user_message,
-    analysis_system_message,
-    chatbot_system_message,
-    chatbot_user_message,
-)
-# from prompt.en_prompt import (
+# from prompt.jp_prompt_img import (
 #     shape_analysis_user_message,
 #     connector_analysis_user_message,
 #     analysis_system_message,
 #     chatbot_system_message,
 #     chatbot_user_message,
 # )
+from prompt.en_prompt_img import (
+    shape_analysis_user_message,
+    connector_analysis_user_message,
+    analysis_system_message,
+    chatbot_system_message,
+    chatbot_user_message,
+)
 
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -140,7 +140,7 @@ state = State(
 )
 
 
-with open("data/chat_log_jp_prompt_img.txt", "w") as f:
+with open("data/chat_log_en_prompt_img_w_caution.txt", "w") as f:
     # with open("data/chat_log_jp_simple_prompt.txt", "w") as f:
     for event in graph.stream(state, config, stream_mode="values"):
         # print(event)
