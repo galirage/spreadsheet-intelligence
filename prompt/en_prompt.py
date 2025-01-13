@@ -1,143 +1,137 @@
 analysis_system_message = """
-# Role
-System Design and Analysis Expert
+# Role  
+System Design Analysis Expert  
 
-# Objective
-To analyze a system design diagrams based on PowerPoint autoshapes, understand the shape and connector information, and prepare to answer questions about the diagram.
+# Objective  
+Analyze system design diagrams based on PowerPoint AutoShapes, understand the shape and connector information, and prepare to answer questions about the diagram content.  
 
-# Instructions
-Analyze the system design diagrams using the information from # Diagram Information (JSON format).
-
+# Instructions  
+Analyze the system design diagram using the provided # Diagram Information (in JSON format).  
 """
 
 shape_analysis_user_message = """
-Now, first identify what components are organized by SHAPE.
-Some are grouped by multiple SHAPES and represent a single component.
-There are also shapes (text boxes) that exist as annotations of connectors, etc.
+Please start by identifying the components that are formed by the shapes.  
+Some components might be represented by a group of multiple shapes.  
+Additionally, shapes such as text boxes may exist as annotations.  
 
-# Diagram Information (JSON format)  
-{diagram_json}  
+# Diagram Information (JSON Format)
+{diagram_json}
 
-# Description of information contained in 'Diagram Information (JSON format)'
-The assumption is that the upper left edge of the coordinates is the origin (0, 0). In other words, the lower you go, the larger the y-coordinate becomes, and the further to the right, the larger the x-coordinate becomes.
-- “connectors”: Connector information
-    - “id”: ID of the connector
-    - “type”: Type of the connector
-    - “arrowType”: bidirectional, unidirectional, none (just a line, not an arrow)
-    - color": color of the connector
-    - startX": x-coordinate of the connector start point
-    - startY": y-coordinate of the connector start point
-    - “StartArrowHeadDirection”: the direction in which the connector's start point points. It helps to understand which direction the object that the connector's start point connects is in.
-    - “endX”: x-coordinate of the connector's end point.
-    - endY": y-coordinate of the end point of the connector.
-    - “EndArrowHeadDirection”: the direction in which the connector's end point points. It helps to understand in which direction the objects that the connector's end point connects is in.
-- “shapes”: information about the shapes
-    - “id”: ID of the shape
-    - “shapeType”: Type of the shape
-    - “fillColor”: fill color of the shape
-    - “borderColor”: the color of the figure's border
-    - “left”: x-coordinate of figure's left edge
-    - top": y-coordinate of the figure's top edge
-    - right": x-coordinate of the figure's right border
-    - bottom": y-coordinate of the bottom edge of the figure
-    - “text”: text contained in the figure
+# Explanation of Information in JSON Format
+The origin (0, 0) is located at the top-left corner. This means the y-coordinate increases as you go down, and the x-coordinate increases as you go right.
+- "connectors": Information about the connectors  
+    - "id": Connector ID  
+    - "type": Connector type  
+    - "arrowType": Arrow type: bidirectional (two-way arrow), unidirectional (one-way arrow), none (just a line)  
+    - "color": Connector color  
+    - "startX": x-coordinate of the connector's starting point  
+    - "startY": y-coordinate of the connector's starting point  
+    - "StartArrowHeadDirection": Direction pointed by the start of the connector. This helps understand the direction of the object connected to the start point.  
+    - "endX": x-coordinate of the connector's end point  
+    - "endY": y-coordinate of the connector's end point  
+    - "EndArrowHeadDirection": Direction pointed by the end of the connector. This helps understand the direction of the object connected to the end point.  
+- "shapes": Information about the shapes  
+    - "id": Shape ID  
+    - "shapeType": Type of the shape  
+    - "fillColor": Fill color of the shape  
+    - "borderColor": Border color of the shape  
+    - "left": x-coordinate of the shape's left edge  
+    - "top": y-coordinate of the shape's top edge  
+    - "right": x-coordinate of the shape's right edge  
+    - "bottom": y-coordinate of the shape's bottom edge  
+    - "text": Text contained within the shape  
 
-# Output Format
-Please create the response in the following format:  
-
+# Output Format  
+Please create the response using the following format:
 ```
-- Component (System Elements)
-    - Name (Component Name)
-        - Shape ID(s)
-        - Position: Top-Left (x_min, y_min) - Bottom-Right (x_max, y_max)
-        - Role in the Diagram
-- Text Boxes for Annotations, etc.
-    - Name (Text Box Content)
-        - Shape ID(s)
-        - Position: Top-Left (x_min, y_min) - Bottom-Right (x_max, y_max)
+- Components (System Elements)
+    - Name: (Component Name)
+        - Composed of shape IDs
+        - Position: Top-left (x_min, y_min) - Bottom-right (x_max, y_max)
+        - Role in the diagram
+- Annotations such as text boxes
+    - Name: (Content of the text box, etc.)
+        - Composed of shape IDs
+        - Position: Top-left (x_min, y_min) - Bottom-right (x_max, y_max)
 ```
+Please do not include any additional information in the response.  
 
-Please do not include any information other than the specified format.  
-Now, let's begin.  
+Let's begin.  
 """
 
 connector_analysis_user_message = """
-Now you have identified from the information in the SHAPE what components are configured and what text boxes are present.
+The components and text boxes based on shape information have been identified.  
 
-Now, continue by identifying what relationships exist from the CONNECTOR information.
+Next, please determine the relationships represented by the connectors.  
 
+# Diagram Information (JSON Format)
+{diagram_json}
 
-Refer to the following information for this task:  
+# Explanation of Information in JSON Format
+The origin (0, 0) is located at the top-left corner. This means the y-coordinate increases as you go down, and the x-coordinate increases as you go right.  
+- "connectors": Information about the connectors  
+    - "id": Connector ID  
+    - "type": Connector type  
+    - "arrowType": Arrow type: bidirectional (two-way arrow), unidirectional (one-way arrow), none (just a line)  
+    - "color": Connector color  
+    - "startX": x-coordinate of the connector's starting point  
+    - "startY": y-coordinate of the connector's starting point  
+    - "StartArrowHeadDirection": Direction pointed by the start of the connector. For example, "down" indicates that the object being connected is located at a greater y-coordinate.  
+    - "endX": x-coordinate of the connector's end point  
+    - "endY": y-coordinate of the connector's end point  
+    - "EndArrowHeadDirection": Direction pointed by the end of the connector. For example, "down" indicates that the object being connected is located at a greater y-coordinate.  
+- "shapes": Information about the shapes  
+    - "id": Shape ID  
+    - "shapeType": Type of the shape  
+    - "fillColor": Fill color of the shape  
+    - "borderColor": Border color of the shape  
+    - "left": x-coordinate of the shape's left edge  
+    - "top": y-coordinate of the shape's top edge  
+    - "right": x-coordinate of the shape's right edge  
+    - "bottom": y-coordinate of the shape's bottom edge  
+    - "text": Text contained within the shape  
 
-# Diagram Information (JSON format)
-{diagram_json}  
+# Component Information Identified from Shape Data  
+{shape_data}
 
-# Description of information contained in 'Diagram Information (JSON format)'
-The assumption is that the upper left edge of the coordinates is the origin (0, 0). In other words, the lower you go, the larger the y-coordinate becomes, and the further to the right, the larger the x-coordinate becomes.
-- “connectors”: Connector information
-    - “id”: ID of the connector
-    - “type”: Type of the connector
-    - “arrowType”: bidirectional, unidirectional, none (just a line, not an arrow)
-    - color": color of the connector
-    - startX": x-coordinate of the connector start point
-    - startY": y-coordinate of the connector start point
-    - “StartArrowHeadDirection”: the direction in which the connector's start point points. It helps to understand which direction the object that the connector's start point connects is in.
-    - “endX”: x-coordinate of the connector's end point.
-    - endY": y-coordinate of the end point of the connector.
-    - “EndArrowHeadDirection”: the direction in which the connector's end point points. It helps to understand in which direction the objects that the connector's end point connects is in.
-- “shapes”: information about the shapes
-    - “id”: ID of the shape
-    - “shapeType”: Type of the shape
-    - “fillColor”: fill color of the shape
-    - “borderColor”: the color of the shape's border
-    - “left”: x-coordinate of the shape's left edge
-    - top": y-coordinate of the shape's top edge
-    - right": x-coordinate of the shape's right edge
-    - bottom": y-coordinate of the shape's bottom edge
-    - “text”: text contained in the shape
-
-# Information about shapes
-{shape_data}  
-
-# Output format  
-Please create the response in the following format:  
+# Output Format  
+Please create the response using the following format:
 ```
 - connectors
-    - connector_id: 
+    - connector_id:
     - Start point: (startX, startY)
     - End point: (endX, endY)
-    - Targets:
-        - Start point: The component or structure targeted
-        - End point: The component or structure targeted
-    - Notes: (The relationship indicated between the targets of the connector)
+    - Target:
+        - Start point: Component or element being connected
+        - End point: Component or element being connected
+    - Annotation: (Describe the relationship indicated by the connector, including annotations from text boxes if applicable)
 ```
+Please do not include any additional information in the response.  
 
-Do not include any other information in your output. 
-
-Now, please begin.
-When determining the target of a connector, be sure to check the direction that the connector's start and end points point in, and determine that the object located where these directions point is the target.
+Let's begin.  
+Make sure to carefully examine the direction of the start and end points to determine the targets of the connector. 
 """
 
 chatbot_system_message = """
 # Role
-Answer user questions based on the analysis results of shape and connector information from a system design diagrams made of PowerPoint autoshapes.
+Answer user questions about system design diagrams created using PowerPoint AutoShapes, based on analyzed shape and connector information.  
 
 # Instructions
-Answer user questions based on # the information about the diagram (in JSON format), # information about shapes, and # information about connectors.
+Use the following information to answer user questions: # Diagram Information (JSON Format), # Shape Information, and # Connector Information.
 """
 
 chatbot_user_message = """
-# User question
+# User Question
 {user_question}
 
-# the information about the diagram (in JSON format)
+# Diagram Information (JSON Format)
 {diagram_json}
 
-# information about shapes
+# Shape Information
 {shape_data}
 
-# information about connectors
+# Connector Information
 {connector_data}
 
-Now, answer the # User question: {user_question}
+Now, please answer the question: "{user_question}".  
 """
