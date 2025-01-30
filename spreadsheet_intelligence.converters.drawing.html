@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>spreadsheet_intelligence.converters.drawing package &#8212; spreadsheet-intelligence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'spreadsheet_intelligence.converters.drawing';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">spreadsheet-intelligence</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    spreadsheet_intelligence
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    spreadsheet_intelligence
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">spreadsheet_intelligence.converters.drawing package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html">spreadsheet_intelligence.converters.drawing.drawing_raw_converters package</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">spreadsheet_intelligence.converters.drawing package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="spreadsheet-intelligence-converters-drawing-package">
+<h1>spreadsheet_intelligence.converters.drawing package<a class="headerlink" href="#spreadsheet-intelligence-converters-drawing-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html">spreadsheet_intelligence.converters.drawing.drawing_raw_converters package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#module-spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter">spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter.BaseDrawingConverter"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter.BaseDrawingConverter.anchor"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.anchor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter.BaseDrawingConverter.drawing"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter.BaseDrawingConverter.refined"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.refined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter.BaseDrawingConverter._convert_one_color"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter._convert_one_color()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter.BaseDrawingConverter._validate_drawing"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter._validate_drawing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter.BaseDrawingConverter.convert"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter.BaseDrawingConverter._abc_impl"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#module-spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter">spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.anchor"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.anchor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.drawing"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.refined"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.refined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.theme"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.id_counter"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.id_counter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.convert_length_unit"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.convert_length_unit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.convert_angle_unit"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.convert_angle_unit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.convert_units"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.convert_units()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.calc_endpoints_pos"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.calc_endpoints_pos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.extract_line_style"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.extract_line_style()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.extract_arrow_type"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.extract_arrow_type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter.convert"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter.convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter._abc_impl"><code class="docutils literal notranslate"><span class="pre">ConnectorConverter._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.StraightConnector1Converter"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.StraightConnector1Converter.drawing"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.StraightConnector1Converter.refined"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter.refined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.StraightConnector1Converter._validate_drawing"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter._validate_drawing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.StraightConnector1Converter.convert"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter.convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.StraightConnector1Converter._abc_impl"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.BentConnector3Converter"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.BentConnector3Converter.drawing"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.BentConnector3Converter.refined"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.refined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.BentConnector3Converter._validate_drawing"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter._validate_drawing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.BentConnector3Converter.convert_angle_unit"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.convert_angle_unit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.BentConnector3Converter.extract_endpoints_direction"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.extract_endpoints_direction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.BentConnector3Converter.convert"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.BentConnector3Converter._abc_impl"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#module-spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter">spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter.ShapeConverter"><code class="docutils literal notranslate"><span class="pre">ShapeConverter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter.ShapeConverter.anchor"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.anchor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter.ShapeConverter.drawing"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter.ShapeConverter.theme"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter.ShapeConverter.id_counter"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.id_counter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#id0"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter.ShapeConverter.extract_shape_type"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.extract_shape_type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter.ShapeConverter.convert_unit"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.convert_unit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter.ShapeConverter.calc_shape_bbox"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.calc_shape_bbox()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter.ShapeConverter.convert"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.shape_raw_converter.ShapeConverter._abc_impl"><code class="docutils literal notranslate"><span class="pre">ShapeConverter._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#module-spreadsheet_intelligence.converters.drawing.drawing_raw_converters">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BentConnector3Converter"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BentConnector3Converter.drawing"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BentConnector3Converter.refined"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.refined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BentConnector3Converter._validate_drawing"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter._validate_drawing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BentConnector3Converter.convert_angle_unit"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.convert_angle_unit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BentConnector3Converter.extract_endpoints_direction"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.extract_endpoints_direction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BentConnector3Converter.convert"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BentConnector3Converter._abc_impl"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.StraightConnector1Converter"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.StraightConnector1Converter.drawing"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.StraightConnector1Converter.refined"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter.refined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.StraightConnector1Converter._validate_drawing"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter._validate_drawing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.StraightConnector1Converter.convert"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter.convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.StraightConnector1Converter._abc_impl"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.ShapeConverter"><code class="docutils literal notranslate"><span class="pre">ShapeConverter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.ShapeConverter.anchor"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.anchor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.ShapeConverter.drawing"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.ShapeConverter.theme"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.ShapeConverter.id_counter"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.id_counter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#id1"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.ShapeConverter.extract_shape_type"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.extract_shape_type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.ShapeConverter.convert_unit"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.convert_unit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.ShapeConverter.calc_shape_bbox"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.calc_shape_bbox()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.ShapeConverter.convert"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.ShapeConverter._abc_impl"><code class="docutils literal notranslate"><span class="pre">ShapeConverter._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BaseDrawingConverter"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BaseDrawingConverter.anchor"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.anchor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BaseDrawingConverter.drawing"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.drawing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BaseDrawingConverter.refined"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.refined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BaseDrawingConverter._convert_one_color"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter._convert_one_color()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BaseDrawingConverter._validate_drawing"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter._validate_drawing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BaseDrawingConverter.convert"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.BaseDrawingConverter._abc_impl"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-spreadsheet_intelligence.converters.drawing">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-spreadsheet_intelligence.converters.drawing" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BentConnector3Converter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.converters.drawing.</span></span><span class="sig-name descname"><span class="pre">BentConnector3Converter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connector_anchor_raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw"><span class="pre">ConnectorAnchorRaw</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.Theme" title="spreadsheet_intelligence.models.raw.theme.theme_models.Theme"><span class="pre">Theme</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_counter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/connector_raw_converter.html#BentConnector3Converter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter" title="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectorConverter</span></code></a></p>
+<p>Converter for BentConnector3 drawings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BentConnector3Converter.drawing">
+<span class="sig-name descname"><span class="pre">drawing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw"><span class="pre">ConnectorRaw</span></a></em><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter.drawing" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BentConnector3Converter.refined">
+<span class="sig-name descname"><span class="pre">refined</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.BentConnector3" title="spreadsheet_intelligence.models.converted.drawing_models.BentConnector3"><span class="pre">BentConnector3</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter.refined" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BentConnector3Converter._validate_drawing">
+<span class="sig-name descname"><span class="pre">_validate_drawing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drawing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw"><span class="pre">ConnectorRaw</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/connector_raw_converter.html#BentConnector3Converter._validate_drawing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter._validate_drawing" title="Link to this definition">#</a></dt>
+<dd><p>Validates that the drawing is of type BentConnector3 and has a valid rotation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>drawing</strong> – The raw drawing data.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the drawing type is not BentConnector3 or the rotation is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BentConnector3Converter.convert_angle_unit">
+<span class="sig-name descname"><span class="pre">convert_angle_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/connector_raw_converter.html#BentConnector3Converter.convert_angle_unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter.convert_angle_unit" title="Link to this definition">#</a></dt>
+<dd><p>Converts angle from raw units to degrees.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>raw_unit</strong> – The angle in raw units.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The angle in degrees.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BentConnector3Converter.extract_endpoints_direction">
+<span class="sig-name descname"><span class="pre">extract_endpoints_direction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rotation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip_h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip_v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interm_ln_pos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/connector_raw_converter.html#BentConnector3Converter.extract_endpoints_direction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter.extract_endpoints_direction" title="Link to this definition">#</a></dt>
+<dd><p>Extracts the directions of the arrowheads at both ends.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rotation</strong> – The rotation of the drawing.</p></li>
+<li><p><strong>flip_h</strong> – Whether the drawing is flipped horizontally.</p></li>
+<li><p><strong>flip_v</strong> – Whether the drawing is flipped vertically.</p></li>
+<li><p><strong>interm_ln_pos</strong> – The position of the intermediate line.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the directions of the head and tail.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BentConnector3Converter.convert">
+<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.BentConnector3" title="spreadsheet_intelligence.models.converted.drawing_models.BentConnector3"><span class="pre">BentConnector3</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/connector_raw_converter.html#BentConnector3Converter.convert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter.convert" title="Link to this definition">#</a></dt>
+<dd><p>Converts the raw drawing to a BentConnector3 object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A BentConnector3 object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BentConnector3Converter._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter._abc_impl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.StraightConnector1Converter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.converters.drawing.</span></span><span class="sig-name descname"><span class="pre">StraightConnector1Converter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connector_anchor_raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw"><span class="pre">ConnectorAnchorRaw</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.Theme" title="spreadsheet_intelligence.models.raw.theme.theme_models.Theme"><span class="pre">Theme</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_counter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/connector_raw_converter.html#StraightConnector1Converter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter" title="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.connector_raw_converter.ConnectorConverter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectorConverter</span></code></a></p>
+<p>Converter for StraightConnector1 drawings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.StraightConnector1Converter.drawing">
+<span class="sig-name descname"><span class="pre">drawing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw"><span class="pre">ConnectorRaw</span></a></em><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter.drawing" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.StraightConnector1Converter.refined">
+<span class="sig-name descname"><span class="pre">refined</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.StraightConnector1" title="spreadsheet_intelligence.models.converted.drawing_models.StraightConnector1"><span class="pre">StraightConnector1</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter.refined" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.StraightConnector1Converter._validate_drawing">
+<span class="sig-name descname"><span class="pre">_validate_drawing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drawing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw"><span class="pre">ConnectorRaw</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/connector_raw_converter.html#StraightConnector1Converter._validate_drawing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter._validate_drawing" title="Link to this definition">#</a></dt>
+<dd><p>Validates that the drawing is of type StraightConnector1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>drawing</strong> – The raw drawing data.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the drawing type is not StraightConnector1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.StraightConnector1Converter.convert">
+<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.StraightConnector1" title="spreadsheet_intelligence.models.converted.drawing_models.StraightConnector1"><span class="pre">StraightConnector1</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/connector_raw_converter.html#StraightConnector1Converter.convert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter.convert" title="Link to this definition">#</a></dt>
+<dd><p>Converts the raw drawing to a StraightConnector1 object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A StraightConnector1 object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.StraightConnector1Converter._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter._abc_impl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.ShapeConverter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.converters.drawing.</span></span><span class="sig-name descname"><span class="pre">ShapeConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape_anchor_raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw"><span class="pre">ShapeAnchorRaw</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.Theme" title="spreadsheet_intelligence.models.raw.theme.theme_models.Theme"><span class="pre">Theme</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_counter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/shape_raw_converter.html#ShapeConverter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.html#spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter.BaseDrawingConverter" title="spreadsheet_intelligence.converters.drawing.drawing_raw_converters.base_drawing_raw_converter.BaseDrawingConverter"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDrawingConverter</span></code></a></p>
+<p>Converter for shape drawings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.ShapeConverter.anchor">
+<span class="sig-name descname"><span class="pre">anchor</span></span><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.anchor" title="Link to this definition">#</a></dt>
+<dd><p>The anchor point of the shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor" title="spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor">Anchor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.ShapeConverter.drawing">
+<span class="sig-name descname"><span class="pre">drawing</span></span><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.drawing" title="Link to this definition">#</a></dt>
+<dd><p>The raw shape data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw">ShapeRaw</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.ShapeConverter.theme">
+<span class="sig-name descname"><span class="pre">theme</span></span><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.theme" title="Link to this definition">#</a></dt>
+<dd><p>The theme applied to the shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.Theme" title="spreadsheet_intelligence.models.raw.theme.theme_models.Theme">Theme</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.ShapeConverter.id_counter">
+<span class="sig-name descname"><span class="pre">id_counter</span></span><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.id_counter" title="Link to this definition">#</a></dt>
+<dd><p>A counter for generating unique IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>TODO:
+- Text parsing is not implemented when the text contains multiple formats.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">drawing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw"><span class="pre">ShapeRaw</span></a></em><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.ShapeConverter.extract_shape_type">
+<span class="sig-name descname"><span class="pre">extract_shape_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ShapeType" title="spreadsheet_intelligence.models.common.enums.ShapeType"><span class="pre">ShapeType</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/shape_raw_converter.html#ShapeConverter.extract_shape_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.extract_shape_type" title="Link to this definition">#</a></dt>
+<dd><p>Extracts the shape type from the raw drawing data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The type of the shape.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ShapeType" title="spreadsheet_intelligence.models.common.enums.ShapeType">ShapeType</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the shape type is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.ShapeConverter.convert_unit">
+<span class="sig-name descname"><span class="pre">convert_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/shape_raw_converter.html#ShapeConverter.convert_unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.convert_unit" title="Link to this definition">#</a></dt>
+<dd><p>Converts a raw unit to centimeters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>raw_unit</strong> (<em>int</em>) – The raw unit to be converted.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The converted unit in centimeters.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p>TODO: Allow unit conversion method to be specified globally in settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.ShapeConverter.calc_shape_bbox">
+<span class="sig-name descname"><span class="pre">calc_shape_bbox</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/shape_raw_converter.html#ShapeConverter.calc_shape_bbox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.calc_shape_bbox" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the bounding box of the shape after unit conversion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing the x, y coordinates and width, height of the shape.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.ShapeConverter.convert">
+<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape" title="spreadsheet_intelligence.models.converted.drawing_models.Shape"><span class="pre">Shape</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/shape_raw_converter.html#ShapeConverter.convert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.convert" title="Link to this definition">#</a></dt>
+<dd><p>Converts the raw shape data into a Shape object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The converted shape object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape" title="spreadsheet_intelligence.models.converted.drawing_models.Shape">Shape</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.ShapeConverter._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter._abc_impl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BaseDrawingConverter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.converters.drawing.</span></span><span class="sig-name descname"><span class="pre">BaseDrawingConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw"><span class="pre">ShapeAnchorRaw</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw"><span class="pre">ConnectorAnchorRaw</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/base_drawing_raw_converter.html#BaseDrawingConverter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Base abstract class for drawing converters.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.anchor">
+<span class="sig-name descname"><span class="pre">anchor</span></span><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.anchor" title="Link to this definition">#</a></dt>
+<dd><p>The anchor point of the drawing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor" title="spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor">Anchor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.drawing">
+<span class="sig-name descname"><span class="pre">drawing</span></span><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.drawing" title="Link to this definition">#</a></dt>
+<dd><p>The raw drawing data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.base_models.BaseDrawingRaw" title="spreadsheet_intelligence.models.raw.drawing.base_models.BaseDrawingRaw">BaseDrawingRaw</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.refined">
+<span class="sig-name descname"><span class="pre">refined</span></span><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.refined" title="Link to this definition">#</a></dt>
+<dd><p>The refined drawing data after conversion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.base_models.BaseDrawingRaw" title="spreadsheet_intelligence.models.raw.drawing.base_models.BaseDrawingRaw">BaseDrawingRaw</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BaseDrawingConverter._convert_one_color">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_convert_one_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scheme_clr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr" title="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr"><span class="pre">SchemeClr</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srgb_clr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr" title="spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr"><span class="pre">SrgbClr</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style_base_ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><span class="pre">StyleBaseRef</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.Theme" title="spreadsheet_intelligence.models.raw.theme.theme_models.Theme"><span class="pre">Theme</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color"><span class="pre">Color</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/base_drawing_raw_converter.html#BaseDrawingConverter._convert_one_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter._convert_one_color" title="Link to this definition">#</a></dt>
+<dd><p>Converts color information to a Color object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scheme_clr</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr" title="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr"><em>SchemeClr</em></a><em>]</em>) – The scheme color.</p></li>
+<li><p><strong>srgb_clr</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr" title="spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr"><em>SrgbClr</em></a><em>]</em>) – The sRGB color.</p></li>
+<li><p><strong>style_base_ref</strong> (<a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><em>StyleBaseRef</em></a>) – The style base reference.</p></li>
+<li><p><strong>theme</strong> (<a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#spreadsheet_intelligence.models.raw.theme.theme_models.Theme" title="spreadsheet_intelligence.models.raw.theme.theme_models.Theme"><em>Theme</em></a>) – The theme used for color conversion.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The converted color object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color">Color</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the color type is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BaseDrawingConverter._validate_drawing">
+<span class="sig-name descname"><span class="pre">_validate_drawing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drawing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.base_models.BaseDrawingRaw" title="spreadsheet_intelligence.models.raw.drawing.base_models.BaseDrawingRaw"><span class="pre">BaseDrawingRaw</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/base_drawing_raw_converter.html#BaseDrawingConverter._validate_drawing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter._validate_drawing" title="Link to this definition">#</a></dt>
+<dd><p>Validates if the drawing is the expected input for the converter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>drawing</strong> (<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.base_models.BaseDrawingRaw" title="spreadsheet_intelligence.models.raw.drawing.base_models.BaseDrawingRaw"><em>BaseDrawingRaw</em></a>) – The drawing to validate.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the drawing is valid, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.convert">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/converters/drawing/drawing_raw_converters/base_drawing_raw_converter.html#BaseDrawingConverter.convert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.convert" title="Link to this definition">#</a></dt>
+<dd><p>Abstract method to convert the drawing.</p>
+<p>This method should be implemented by subclasses.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.converters.drawing.BaseDrawingConverter._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter._abc_impl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-spreadsheet_intelligence.converters.drawing">Module contents</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter.drawing"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.drawing</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter.refined"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.refined</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter._validate_drawing"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter._validate_drawing()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter.convert_angle_unit"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.convert_angle_unit()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter.extract_endpoints_direction"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.extract_endpoints_direction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter.convert"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter.convert()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BentConnector3Converter._abc_impl"><code class="docutils literal notranslate"><span class="pre">BentConnector3Converter._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter.drawing"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter.drawing</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter.refined"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter.refined</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter._validate_drawing"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter._validate_drawing()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter.convert"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter.convert()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.StraightConnector1Converter._abc_impl"><code class="docutils literal notranslate"><span class="pre">StraightConnector1Converter._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter"><code class="docutils literal notranslate"><span class="pre">ShapeConverter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.anchor"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.anchor</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.drawing"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.drawing</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.theme"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.theme</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.id_counter"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.id_counter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.drawing</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.extract_shape_type"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.extract_shape_type()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.convert_unit"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.convert_unit()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.calc_shape_bbox"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.calc_shape_bbox()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter.convert"><code class="docutils literal notranslate"><span class="pre">ShapeConverter.convert()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.ShapeConverter._abc_impl"><code class="docutils literal notranslate"><span class="pre">ShapeConverter._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.anchor"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.anchor</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.drawing"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.drawing</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.refined"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.refined</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter._convert_one_color"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter._convert_one_color()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter._validate_drawing"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter._validate_drawing()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter.convert"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter.convert()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.converters.drawing.BaseDrawingConverter._abc_impl"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverter._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/spreadsheet_intelligence.converters.drawing.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Shue Shiinoki, Galirage, Inc..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

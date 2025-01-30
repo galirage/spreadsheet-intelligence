@@ -1,0 +1,614 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>spreadsheet_intelligence.models.raw.drawing.drawing_models &#8212; spreadsheet-intelligence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/spreadsheet_intelligence/models/raw/drawing/drawing_models';</script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">spreadsheet-intelligence</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../modules.html">
+    spreadsheet_intelligence
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../modules.html">
+    spreadsheet_intelligence
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">spreadsheet_intelligence.models.raw.drawing.drawing_models</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for spreadsheet_intelligence.models.raw.drawing.drawing_models</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spreadsheet_intelligence.models.raw.drawing.base_models</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">BaseDrawingRaw</span><span class="p">,</span>
+    <span class="n">BaseAnchorRaw</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spreadsheet_intelligence.models.common.enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConnectorType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spreadsheet_intelligence.models.raw.theme.theme_models</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SchemeClr</span><span class="p">,</span>
+    <span class="n">SrgbClr</span><span class="p">,</span>
+    <span class="n">StyleRefs</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="ArrowHead">
+<a class="viewcode-back" href="../../../../../spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ArrowHead">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ArrowHead</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents an arrow head of a connector with type, width, and length.</span>
+
+<span class="sd">    XMLReference:</span>
+<span class="sd">        type: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln/xdr:headEnd(tailEnd) &gt;&gt; type</span>
+<span class="sd">        width: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln/xdr:headEnd(tailEnd) &gt;&gt; w</span>
+<span class="sd">        length: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln/xdr:headEnd(tailEnd) &gt;&gt; len</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">width</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ArrowLine">
+<a class="viewcode-back" href="../../../../../spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ArrowLine">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ArrowLine</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents an arrow line of a connector with width, cap, compound, alignment, dash style, and arrow heads.</span>
+
+<span class="sd">    XMLReference:</span>
+<span class="sd">        width: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln &gt;&gt; w</span>
+<span class="sd">        cap: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln &gt;&gt; cap</span>
+<span class="sd">        compound: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln &gt;&gt; cmpd</span>
+<span class="sd">        alignment: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln &gt;&gt; algn</span>
+<span class="sd">        dash_style: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln/xdr:prstDash &gt;&gt; val</span>
+<span class="sd">        head: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln/xdr:headEnd</span>
+<span class="sd">        tail: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln/xdr:tailEnd</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">width</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">cap</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="c1"># this is not parsed in the current parser</span>
+    <span class="n">compound</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="c1"># this is not parsed in the current parser</span>
+    <span class="n">alignment</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="c1"># this is not parsed in the current parser</span>
+    <span class="n">dash_style</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">head</span><span class="p">:</span> <span class="n">ArrowHead</span>
+    <span class="n">tail</span><span class="p">:</span> <span class="n">ArrowHead</span></div>
+
+
+
+<div class="viewcode-block" id="ConnectorRaw">
+<a class="viewcode-back" href="../../../../../spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ConnectorRaw</span><span class="p">(</span><span class="n">BaseDrawingRaw</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents information shared by all connector types, including type, flip, rotation, line data, intermediate line position, style references, and color data.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        connector_type (ConnectorType): The type of connector.</span>
+<span class="sd">        flip_h (bool): Whether the connector is flipped horizontally.</span>
+<span class="sd">        flip_v (bool): Whether the connector is flipped vertically.</span>
+<span class="sd">        rotation (float): The rotation of the connector in degrees.</span>
+<span class="sd">        arrow_line (ArrowLine): The line data for the connector.</span>
+<span class="sd">        interm_line_pos (Optional[int]): The position of the intermediate line.</span>
+<span class="sd">        style_refs (StyleRefs): The style references for the connector.</span>
+<span class="sd">        scheme_clr (Optional[SchemeClr]): The scheme color for the connector.</span>
+<span class="sd">        srgb_clr (Optional[SrgbClr]): The sRGB color for the connector.</span>
+
+<span class="sd">    XMLReference:</span>
+<span class="sd">        connector_type: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:prstGeom &gt;&gt; prst</span>
+<span class="sd">        flip_h: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:xfrm &gt;&gt; flipH</span>
+<span class="sd">        flip_v: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:xfrm &gt;&gt; flipV</span>
+<span class="sd">        rotation: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:xfrm &gt;&gt; rot</span>
+<span class="sd">        arrow_line: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:ln</span>
+<span class="sd">        interm_line_pos: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:spPr/xdr:prstGeom/xdr:avLst/xdr:gd &gt;&gt; fmla</span>
+<span class="sd">        style_refs: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:style/a:lnRef &gt;&gt; idx</span>
+<span class="sd">        scheme_clr: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:style/a:lnRef/a:schemeClr &gt;&gt; val</span>
+<span class="sd">        srgb_clr: xl/drawingX.xml/xdr:twoCellAnchor/xdr:cxnSp/xdr:style/a:lnRef/a:srgbClr &gt;&gt; val</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">connector_type</span><span class="p">:</span> <span class="n">ConnectorType</span>
+    <span class="n">flip_h</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">flip_v</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">rotation</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">arrow_line</span><span class="p">:</span> <span class="n">ArrowLine</span>
+    <span class="n">interm_line_pos</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="n">style_refs</span><span class="p">:</span> <span class="n">StyleRefs</span>
+    <span class="n">scheme_clr</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SchemeClr</span><span class="p">]</span>
+    <span class="n">srgb_clr</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SrgbClr</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="PictureRaw">
+<a class="viewcode-back" href="../../../../../spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.PictureRaw">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PictureRaw</span><span class="p">(</span><span class="n">BaseDrawingRaw</span><span class="p">):</span>
+    <span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+
+<div class="viewcode-block" id="ShapeRaw">
+<a class="viewcode-back" href="../../../../../spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ShapeRaw</span><span class="p">(</span><span class="n">BaseDrawingRaw</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents a shape with type, fill color, line color, style references, and text data.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        shape_type (str): The type of shape.</span>
+<span class="sd">        fill_scheme_clr (Optional[SchemeClr]): The scheme color for the fill.</span>
+<span class="sd">        fill_srgb_clr (Optional[SrgbClr]): The sRGB color for the fill.</span>
+<span class="sd">        line_scheme_clr (Optional[SchemeClr]): The scheme color for the line.</span>
+<span class="sd">        line_srgb_clr (Optional[SrgbClr]): The sRGB color for the line.</span>
+<span class="sd">        style_refs (Optional[StyleRefs]): The style references for the shape.</span>
+<span class="sd">        text_data (List[str]): The text data for the shape.</span>
+<span class="sd">    </span>
+<span class="sd">    XMLReference:</span>
+<span class="sd">        shape_type: xl/drawingX.xml/xdr:twoCellAnchor/xdr:spPr/a:prstGeom &gt;&gt; prst</span>
+<span class="sd">        fill_scheme_clr: xl/drawingX.xml/xdr:twoCellAnchor/xdr:spPr/a:solidFill/a:schemeClr &gt;&gt; val</span>
+<span class="sd">        fill_srgb_clr: xl/drawingX.xml/xdr:twoCellAnchor/xdr:spPr/a:solidFill/a:srgbClr &gt;&gt; val</span>
+<span class="sd">        line_scheme_clr: xl/drawingX.xml/xdr:twoCellAnchor/xdr:spPr/a:ln/a:solidFill/a:schemeClr &gt;&gt; val</span>
+<span class="sd">        line_srgb_clr: xl/drawingX.xml/xdr:twoCellAnchor/xdr:spPr/a:ln/a:solidFill/a:srgbClr &gt;&gt; val</span>
+<span class="sd">        style_refs: xl/drawingX.xml/xdr:twoCellAnchor/xdr:spPr/a:style</span>
+<span class="sd">        text_data: xl/drawingX.xml/xdr:twoCellAnchor/xdr:spPr/a:txBody/a:bodyPr/a:textAlignment &gt;&gt; val</span>
+<span class="sd">    </span>
+<span class="sd">    TODO:</span>
+<span class="sd">        - Text data with multiple formats is not yet parsed</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">shape_type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">fill_scheme_clr</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SchemeClr</span><span class="p">]</span>
+    <span class="n">fill_srgb_clr</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SrgbClr</span><span class="p">]</span>
+    <span class="n">line_scheme_clr</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SchemeClr</span><span class="p">]</span>
+    <span class="n">line_srgb_clr</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SrgbClr</span><span class="p">]</span>
+    <span class="n">style_refs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">StyleRefs</span><span class="p">]</span>
+    <span class="n">text_data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ConnectorAnchorRaw">
+<a class="viewcode-back" href="../../../../../spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ConnectorAnchorRaw</span><span class="p">(</span><span class="n">BaseAnchorRaw</span><span class="p">[</span><span class="n">ConnectorRaw</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents an anchor point for a connector with a connector data.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        anchor (Anchor): The anchor point for the connector.</span>
+<span class="sd">        drawing (ConnectorRaw): The connector data associated with the anchor.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+
+<div class="viewcode-block" id="PictureAnchorRaw">
+<a class="viewcode-back" href="../../../../../spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.PictureAnchorRaw">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PictureAnchorRaw</span><span class="p">(</span><span class="n">BaseAnchorRaw</span><span class="p">[</span><span class="n">PictureRaw</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents an anchor point for a picture with a picture data.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        anchor (Anchor): The anchor point for the picture.</span>
+<span class="sd">        drawing (PictureRaw): The picture data associated with the anchor.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+
+<div class="viewcode-block" id="ShapeAnchorRaw">
+<a class="viewcode-back" href="../../../../../spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ShapeAnchorRaw</span><span class="p">(</span><span class="n">BaseAnchorRaw</span><span class="p">[</span><span class="n">ShapeRaw</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents an anchor point for a shape with a shape data.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        anchor (Anchor): The anchor point for the shape.</span>
+<span class="sd">        drawing (ShapeRaw): The shape data associated with the anchor.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Shue Shiinoki, Galirage, Inc..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

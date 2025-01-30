@@ -1,0 +1,987 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>spreadsheet_intelligence.models.raw.theme package &#8212; spreadsheet-intelligence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'spreadsheet_intelligence.models.raw.theme';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">spreadsheet-intelligence</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    spreadsheet_intelligence
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    spreadsheet_intelligence
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="spreadsheet_intelligence.models.common.html">spreadsheet_intelligence.models.common package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html">spreadsheet_intelligence.models.converted package</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="spreadsheet_intelligence.models.raw.html">spreadsheet_intelligence.models.raw package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html">spreadsheet_intelligence.models.raw.drawing package</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">spreadsheet_intelligence.models.raw.theme package</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">spreadsheet_intelligence.models.raw.theme package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="spreadsheet-intelligence-models-raw-theme-package">
+<h1>spreadsheet_intelligence.models.raw.theme package<a class="headerlink" href="#spreadsheet-intelligence-models-raw-theme-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-spreadsheet_intelligence.models.raw.theme.theme_models">
+<span id="spreadsheet-intelligence-models-raw-theme-theme-models-module"></span><h2>spreadsheet_intelligence.models.raw.theme.theme_models module<a class="headerlink" href="#module-spreadsheet_intelligence.models.raw.theme.theme_models" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.models.raw.theme.theme_models.</span></span><span class="sig-name descname"><span class="pre">SrgbClr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color"><span class="pre">Color</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/models/raw/theme/theme_models.html#SrgbClr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents an sRGB color.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr.val">
+<span class="sig-name descname"><span class="pre">val</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr.val" title="Link to this definition">#</a></dt>
+<dd><p>The sRGB color value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color">Color</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">XMLReference<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">val</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color"><span class="pre">Color</span></a></em><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SysClr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.models.raw.theme.theme_models.</span></span><span class="sig-name descname"><span class="pre">SysClr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_clr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color"><span class="pre">Color</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/models/raw/theme/theme_models.html#SysClr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SysClr" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a system color with a fallback color.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SysClr.val">
+<span class="sig-name descname"><span class="pre">val</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SysClr.val" title="Link to this definition">#</a></dt>
+<dd><p>The system color value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SysClr.last_clr">
+<span class="sig-name descname"><span class="pre">last_clr</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SysClr.last_clr" title="Link to this definition">#</a></dt>
+<dd><p>The fallback color.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color">Color</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">val</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#id1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">last_clr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color"><span class="pre">Color</span></a></em><a class="headerlink" href="#id2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.models.raw.theme.theme_models.</span></span><span class="sig-name descname"><span class="pre">ClrScheme</span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/models/raw/theme/theme_models.html#ClrScheme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a color scheme with various color roles.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.dk1">
+<span class="sig-name descname"><span class="pre">dk1</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.dk1" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.lt1">
+<span class="sig-name descname"><span class="pre">lt1</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.lt1" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.dk2">
+<span class="sig-name descname"><span class="pre">dk2</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.dk2" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.lt2">
+<span class="sig-name descname"><span class="pre">lt2</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.lt2" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent1">
+<span class="sig-name descname"><span class="pre">accent1</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent1" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent2">
+<span class="sig-name descname"><span class="pre">accent2</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent2" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent3">
+<span class="sig-name descname"><span class="pre">accent3</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent3" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent4">
+<span class="sig-name descname"><span class="pre">accent4</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent4" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent5">
+<span class="sig-name descname"><span class="pre">accent5</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent5" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent6">
+<span class="sig-name descname"><span class="pre">accent6</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent6" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.hlink">
+<span class="sig-name descname"><span class="pre">hlink</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.hlink" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.folHlink">
+<span class="sig-name descname"><span class="pre">folHlink</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.folHlink" title="Link to this definition">#</a></dt>
+<dd><p>Union[SysClr, SrgbClr]</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">XMLReference<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dk1</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:dk1</p></li>
+<li><p><strong>lt1</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:lt1</p></li>
+<li><p><strong>dk2</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:dk2</p></li>
+<li><p><strong>lt2</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:lt2</p></li>
+<li><p><strong>accent1</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:accent1</p></li>
+<li><p><strong>accent2</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:accent2</p></li>
+<li><p><strong>accent3</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:accent3</p></li>
+<li><p><strong>accent4</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:accent4</p></li>
+<li><p><strong>accent5</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:accent5</p></li>
+<li><p><strong>accent6</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:accent6</p></li>
+<li><p><strong>hlink</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:hlink</p></li>
+<li><p><strong>folHlink</strong> – xl/theme/themeX.xml/a:theme/a:themeElements/a:clrScheme/a:folHlink</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.map_color">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">map_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/models/raw/theme/theme_models.html#ClrScheme.map_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.map_color" title="Link to this definition">#</a></dt>
+<dd><p>Maps a color role to its corresponding attribute name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>str</em>) – The color role to map.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The mapped attribute name.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.get_color">
+<span class="sig-name descname"><span class="pre">get_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color"><span class="pre">Color</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/models/raw/theme/theme_models.html#ClrScheme.get_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.get_color" title="Link to this definition">#</a></dt>
+<dd><p>Retrieves the color associated with a given role.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>str</em>) – The color role to retrieve.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The color associated with the role.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color">Color</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the color type is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.Theme">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.models.raw.theme.theme_models.</span></span><span class="sig-name descname"><span class="pre">Theme</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clr_scheme</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme" title="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme"><span class="pre">ClrScheme</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/models/raw/theme/theme_models.html#Theme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.Theme" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a theme with a color scheme.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.Theme.clr_scheme">
+<span class="sig-name descname"><span class="pre">clr_scheme</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.Theme.clr_scheme" title="Link to this definition">#</a></dt>
+<dd><p>ClrScheme</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme" title="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme">spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">#</span> <span class="pre">Other</span> <span class="pre">schemes</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">implemented</span> <span class="pre">if</span> <span class="pre">needed</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">clr_scheme</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme" title="spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme"><span class="pre">ClrScheme</span></a></em><a class="headerlink" href="#id3" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.models.raw.theme.theme_models.</span></span><span class="sig-name descname"><span class="pre">SchemeClr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lum_mod</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lum_off</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/models/raw/theme/theme_models.html#SchemeClr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a scheme color with optional adjustments.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.val">
+<span class="sig-name descname"><span class="pre">val</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.val" title="Link to this definition">#</a></dt>
+<dd><p>The theme name such as dk1, lt1, dk2, lt2, tx1, tx2, accent1, accent2, accent3, accent4, accent5, accent6</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.lum_mod">
+<span class="sig-name descname"><span class="pre">lum_mod</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.lum_mod" title="Link to this definition">#</a></dt>
+<dd><p>The luminance modifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.lum_off">
+<span class="sig-name descname"><span class="pre">lum_off</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.lum_off" title="Link to this definition">#</a></dt>
+<dd><p>The luminance offset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.shade">
+<span class="sig-name descname"><span class="pre">shade</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.shade" title="Link to this definition">#</a></dt>
+<dd><p>The shade value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">val</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#id4" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">lum_mod</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id5" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">lum_off</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id6" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">shade</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id7" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.get_color">
+<span class="sig-name descname"><span class="pre">get_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theme</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.Theme" title="spreadsheet_intelligence.models.raw.theme.theme_models.Theme"><span class="pre">Theme</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color"><span class="pre">Color</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/models/raw/theme/theme_models.html#SchemeClr.get_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.get_color" title="Link to this definition">#</a></dt>
+<dd><p>Gets the adjusted color from the theme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>theme</strong> (<a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.Theme" title="spreadsheet_intelligence.models.raw.theme.theme_models.Theme"><em>Theme</em></a>) – The theme to retrieve the color from.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The adjusted color.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color" title="spreadsheet_intelligence.models.common.common_data.Color">Color</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.models.raw.theme.theme_models.</span></span><span class="sig-name descname"><span class="pre">StyleBaseRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_clr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr" title="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr"><span class="pre">SchemeClr</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr" title="spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr"><span class="pre">SrgbClr</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/models/raw/theme/theme_models.html#StyleBaseRef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a base reference for a style.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef.idx">
+<span class="sig-name descname"><span class="pre">idx</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef.idx" title="Link to this definition">#</a></dt>
+<dd><p>The index of the style.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef.ref_clr">
+<span class="sig-name descname"><span class="pre">ref_clr</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef.ref_clr" title="Link to this definition">#</a></dt>
+<dd><p>The reference color.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr" title="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr">SchemeClr</a>, <a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr" title="spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr">SrgbClr</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">idx</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#id8" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">ref_clr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr" title="spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr"><span class="pre">SchemeClr</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr" title="spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr"><span class="pre">SrgbClr</span></a></em><a class="headerlink" href="#id9" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.models.raw.theme.theme_models.</span></span><span class="sig-name descname"><span class="pre">StyleRefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ln_ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><span class="pre">StyleBaseRef</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><span class="pre">StyleBaseRef</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">effect_ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><span class="pre">StyleBaseRef</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><span class="pre">StyleBaseRef</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/models/raw/theme/theme_models.html#StyleRefs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents style references for line, fill, effect, and font.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.ln_ref">
+<span class="sig-name descname"><span class="pre">ln_ref</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.ln_ref" title="Link to this definition">#</a></dt>
+<dd><p>The reference for the line style.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef">StyleBaseRef</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.fill_ref">
+<span class="sig-name descname"><span class="pre">fill_ref</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.fill_ref" title="Link to this definition">#</a></dt>
+<dd><p>The reference for the fill style.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef">StyleBaseRef</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.effect_ref">
+<span class="sig-name descname"><span class="pre">effect_ref</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.effect_ref" title="Link to this definition">#</a></dt>
+<dd><p>The reference for the effect style.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef">StyleBaseRef</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.font_ref">
+<span class="sig-name descname"><span class="pre">font_ref</span></span><a class="headerlink" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.font_ref" title="Link to this definition">#</a></dt>
+<dd><p>The reference for the font style.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef">StyleBaseRef</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">XMLReference<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ln_ref</strong> – xl/drawingX.xml/xdr:twoCellAnchor/xdr:style/a:lnRef</p></li>
+<li><p><strong>fill_ref</strong> – xl/drawingX.xml/xdr:twoCellAnchor/xdr:style/a:fillRef</p></li>
+<li><p><strong>effect_ref</strong> – xl/drawingX.xml/xdr:twoCellAnchor/xdr:style/a:effectRef</p></li>
+<li><p><strong>font_ref</strong> – xl/drawingX.xml/xdr:twoCellAnchor/xdr:style/a:fontRef</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">ln_ref</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><span class="pre">StyleBaseRef</span></a></em><a class="headerlink" href="#id11" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">fill_ref</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><span class="pre">StyleBaseRef</span></a></em><a class="headerlink" href="#id12" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-name descname"><span class="pre">effect_ref</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><span class="pre">StyleBaseRef</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id13" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-name descname"><span class="pre">font_ref</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef" title="spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><span class="pre">StyleBaseRef</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id14" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-spreadsheet_intelligence.models.raw.theme">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-spreadsheet_intelligence.models.raw.theme" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-spreadsheet_intelligence.models.raw.theme.theme_models">spreadsheet_intelligence.models.raw.theme.theme_models module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr"><code class="docutils literal notranslate"><span class="pre">SrgbClr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SrgbClr.val"><code class="docutils literal notranslate"><span class="pre">SrgbClr.val</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">SrgbClr.val</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SysClr"><code class="docutils literal notranslate"><span class="pre">SysClr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SysClr.val"><code class="docutils literal notranslate"><span class="pre">SysClr.val</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SysClr.last_clr"><code class="docutils literal notranslate"><span class="pre">SysClr.last_clr</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">SysClr.val</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">SysClr.last_clr</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme"><code class="docutils literal notranslate"><span class="pre">ClrScheme</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.dk1"><code class="docutils literal notranslate"><span class="pre">ClrScheme.dk1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.lt1"><code class="docutils literal notranslate"><span class="pre">ClrScheme.lt1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.dk2"><code class="docutils literal notranslate"><span class="pre">ClrScheme.dk2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.lt2"><code class="docutils literal notranslate"><span class="pre">ClrScheme.lt2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent1"><code class="docutils literal notranslate"><span class="pre">ClrScheme.accent1</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent2"><code class="docutils literal notranslate"><span class="pre">ClrScheme.accent2</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent3"><code class="docutils literal notranslate"><span class="pre">ClrScheme.accent3</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent4"><code class="docutils literal notranslate"><span class="pre">ClrScheme.accent4</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent5"><code class="docutils literal notranslate"><span class="pre">ClrScheme.accent5</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.accent6"><code class="docutils literal notranslate"><span class="pre">ClrScheme.accent6</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.hlink"><code class="docutils literal notranslate"><span class="pre">ClrScheme.hlink</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.folHlink"><code class="docutils literal notranslate"><span class="pre">ClrScheme.folHlink</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.map_color"><code class="docutils literal notranslate"><span class="pre">ClrScheme.map_color()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.ClrScheme.get_color"><code class="docutils literal notranslate"><span class="pre">ClrScheme.get_color()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.Theme"><code class="docutils literal notranslate"><span class="pre">Theme</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.Theme.clr_scheme"><code class="docutils literal notranslate"><span class="pre">Theme.clr_scheme</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><code class="docutils literal notranslate"><span class="pre">Theme.clr_scheme</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr"><code class="docutils literal notranslate"><span class="pre">SchemeClr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.val"><code class="docutils literal notranslate"><span class="pre">SchemeClr.val</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.lum_mod"><code class="docutils literal notranslate"><span class="pre">SchemeClr.lum_mod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.lum_off"><code class="docutils literal notranslate"><span class="pre">SchemeClr.lum_off</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.shade"><code class="docutils literal notranslate"><span class="pre">SchemeClr.shade</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><code class="docutils literal notranslate"><span class="pre">SchemeClr.val</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><code class="docutils literal notranslate"><span class="pre">SchemeClr.lum_mod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><code class="docutils literal notranslate"><span class="pre">SchemeClr.lum_off</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><code class="docutils literal notranslate"><span class="pre">SchemeClr.shade</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.SchemeClr.get_color"><code class="docutils literal notranslate"><span class="pre">SchemeClr.get_color()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef"><code class="docutils literal notranslate"><span class="pre">StyleBaseRef</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef.idx"><code class="docutils literal notranslate"><span class="pre">StyleBaseRef.idx</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleBaseRef.ref_clr"><code class="docutils literal notranslate"><span class="pre">StyleBaseRef.ref_clr</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><code class="docutils literal notranslate"><span class="pre">StyleBaseRef.idx</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><code class="docutils literal notranslate"><span class="pre">StyleBaseRef.ref_clr</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs"><code class="docutils literal notranslate"><span class="pre">StyleRefs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.ln_ref"><code class="docutils literal notranslate"><span class="pre">StyleRefs.ln_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.fill_ref"><code class="docutils literal notranslate"><span class="pre">StyleRefs.fill_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.effect_ref"><code class="docutils literal notranslate"><span class="pre">StyleRefs.effect_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.models.raw.theme.theme_models.StyleRefs.font_ref"><code class="docutils literal notranslate"><span class="pre">StyleRefs.font_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><code class="docutils literal notranslate"><span class="pre">StyleRefs.ln_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><code class="docutils literal notranslate"><span class="pre">StyleRefs.fill_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><code class="docutils literal notranslate"><span class="pre">StyleRefs.effect_ref</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><code class="docutils literal notranslate"><span class="pre">StyleRefs.font_ref</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-spreadsheet_intelligence.models.raw.theme">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/spreadsheet_intelligence.models.raw.theme.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Shue Shiinoki, Galirage, Inc..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

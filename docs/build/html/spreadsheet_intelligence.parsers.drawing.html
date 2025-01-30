@@ -1,0 +1,910 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>spreadsheet_intelligence.parsers.drawing package &#8212; spreadsheet-intelligence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'spreadsheet_intelligence.parsers.drawing';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">spreadsheet-intelligence</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    spreadsheet_intelligence
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    spreadsheet_intelligence
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">spreadsheet_intelligence.parsers.drawing package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="spreadsheet-intelligence-parsers-drawing-package">
+<h1>spreadsheet_intelligence.parsers.drawing package<a class="headerlink" href="#spreadsheet-intelligence-parsers-drawing-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html">spreadsheet_intelligence.parsers.drawing.drawing_element_parser package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#module-spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser">spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.parse_anchor_point"><code class="docutils literal notranslate"><span class="pre">parse_anchor_point()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.parse_anchor"><code class="docutils literal notranslate"><span class="pre">parse_anchor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser"><code class="docutils literal notranslate"><span class="pre">BaseDrawingParser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser.parse_anchor"><code class="docutils literal notranslate"><span class="pre">BaseDrawingParser.parse_anchor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser.parse_info"><code class="docutils literal notranslate"><span class="pre">BaseDrawingParser.parse_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser.parse_style_ref_el"><code class="docutils literal notranslate"><span class="pre">BaseDrawingParser.parse_style_ref_el()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser.parse_style_element"><code class="docutils literal notranslate"><span class="pre">BaseDrawingParser.parse_style_element()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser.parse_color"><code class="docutils literal notranslate"><span class="pre">BaseDrawingParser.parse_color()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser._parse_drawing"><code class="docutils literal notranslate"><span class="pre">BaseDrawingParser._parse_drawing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser._create_anchor_raw"><code class="docutils literal notranslate"><span class="pre">BaseDrawingParser._create_anchor_raw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser.parse"><code class="docutils literal notranslate"><span class="pre">BaseDrawingParser.parse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser._abc_impl"><code class="docutils literal notranslate"><span class="pre">BaseDrawingParser._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#module-spreadsheet_intelligence.parsers.drawing.drawing_element_parser.connector_parser">spreadsheet_intelligence.parsers.drawing.drawing_element_parser.connector_parser module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.connector_parser.ConnectorParser"><code class="docutils literal notranslate"><span class="pre">ConnectorParser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.connector_parser.ConnectorParser.parse_line_element"><code class="docutils literal notranslate"><span class="pre">ConnectorParser.parse_line_element()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.connector_parser.ConnectorParser.parse_text"><code class="docutils literal notranslate"><span class="pre">ConnectorParser.parse_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.connector_parser.ConnectorParser._parse_drawing"><code class="docutils literal notranslate"><span class="pre">ConnectorParser._parse_drawing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.connector_parser.ConnectorParser._create_anchor_raw"><code class="docutils literal notranslate"><span class="pre">ConnectorParser._create_anchor_raw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.connector_parser.ConnectorParser._abc_impl"><code class="docutils literal notranslate"><span class="pre">ConnectorParser._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#module-spreadsheet_intelligence.parsers.drawing.drawing_element_parser.picture_parser">spreadsheet_intelligence.parsers.drawing.drawing_element_parser.picture_parser module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.picture_parser.PictureParser"><code class="docutils literal notranslate"><span class="pre">PictureParser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.picture_parser.PictureParser._parse_drawing"><code class="docutils literal notranslate"><span class="pre">PictureParser._parse_drawing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.picture_parser.PictureParser._create_anchor_raw"><code class="docutils literal notranslate"><span class="pre">PictureParser._create_anchor_raw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.picture_parser.PictureParser._abc_impl"><code class="docutils literal notranslate"><span class="pre">PictureParser._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#module-spreadsheet_intelligence.parsers.drawing.drawing_element_parser.shape_parser">spreadsheet_intelligence.parsers.drawing.drawing_element_parser.shape_parser module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.shape_parser.ShapeParser"><code class="docutils literal notranslate"><span class="pre">ShapeParser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.shape_parser.ShapeParser._parse_text"><code class="docutils literal notranslate"><span class="pre">ShapeParser._parse_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.shape_parser.ShapeParser._parse_drawing"><code class="docutils literal notranslate"><span class="pre">ShapeParser._parse_drawing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.shape_parser.ShapeParser._create_anchor_raw"><code class="docutils literal notranslate"><span class="pre">ShapeParser._create_anchor_raw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.shape_parser.ShapeParser._abc_impl"><code class="docutils literal notranslate"><span class="pre">ShapeParser._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#module-spreadsheet_intelligence.parsers.drawing.drawing_element_parser">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-spreadsheet_intelligence.parsers.drawing.drawing_xml_parser">
+<span id="spreadsheet-intelligence-parsers-drawing-drawing-xml-parser-module"></span><h2>spreadsheet_intelligence.parsers.drawing.drawing_xml_parser module<a class="headerlink" href="#module-spreadsheet_intelligence.parsers.drawing.drawing_xml_parser" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.</span></span><span class="sig-name descname"><span class="pre">DrawingXMLParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drawing_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Element</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_xml_parser.html#DrawingXMLParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="spreadsheet_intelligence.parsers.abstract.html#spreadsheet_intelligence.parsers.abstract.base_xml_parser.BaseXMLParser" title="spreadsheet_intelligence.parsers.abstract.base_xml_parser.BaseXMLParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseXMLParser</span></code></a></p>
+<p>Parses XML elements related to drawing objects in a spreadsheet.</p>
+<p>This class is responsible for parsing XML elements that represent
+drawing objects such as connectors and shapes in a spreadsheet.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.namespaces">
+<span class="sig-name descname"><span class="pre">namespaces</span></span><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.namespaces" title="Link to this definition">#</a></dt>
+<dd><p>XML namespaces used in the drawing XML.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.xml_root">
+<span class="sig-name descname"><span class="pre">xml_root</span></span><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.xml_root" title="Link to this definition">#</a></dt>
+<dd><p>Root element of the drawing XML.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.connector_list">
+<span class="sig-name descname"><span class="pre">connector_list</span></span><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.connector_list" title="Link to this definition">#</a></dt>
+<dd><p>List of parsed connector anchors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw">ConnectorAnchorRaw</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.shape_list">
+<span class="sig-name descname"><span class="pre">shape_list</span></span><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.shape_list" title="Link to this definition">#</a></dt>
+<dd><p>List of parsed shape anchors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw">ShapeAnchorRaw</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">namespaces</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">connector_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw"><span class="pre">ConnectorAnchorRaw</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">shape_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw"><span class="pre">ShapeAnchorRaw</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw"><span class="pre">ConnectorAnchorRaw</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw"><span class="pre">ShapeAnchorRaw</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_xml_parser.html#DrawingXMLParser.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.parse" title="Link to this definition">#</a></dt>
+<dd><p>Parses the drawing XML to extract connectors and shapes.</p>
+<p>Iterates over the XML elements to find and parse connectors and shapes,
+storing them in their respective lists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing
+lists of parsed connector and shape anchors.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[List[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw">ConnectorAnchorRaw</a>], List[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw">ShapeAnchorRaw</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser._abc_impl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-spreadsheet_intelligence.parsers.drawing">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-spreadsheet_intelligence.parsers.drawing" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.DrawingXMLParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.parsers.drawing.</span></span><span class="sig-name descname"><span class="pre">DrawingXMLParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drawing_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Element</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_xml_parser.html#DrawingXMLParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="spreadsheet_intelligence.parsers.abstract.html#spreadsheet_intelligence.parsers.abstract.base_xml_parser.BaseXMLParser" title="spreadsheet_intelligence.parsers.abstract.base_xml_parser.BaseXMLParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseXMLParser</span></code></a></p>
+<p>Parses XML elements related to drawing objects in a spreadsheet.</p>
+<p>This class is responsible for parsing XML elements that represent
+drawing objects such as connectors and shapes in a spreadsheet.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.namespaces">
+<span class="sig-name descname"><span class="pre">namespaces</span></span><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.namespaces" title="Link to this definition">#</a></dt>
+<dd><p>XML namespaces used in the drawing XML.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.xml_root">
+<span class="sig-name descname"><span class="pre">xml_root</span></span><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.xml_root" title="Link to this definition">#</a></dt>
+<dd><p>Root element of the drawing XML.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ET.Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.connector_list">
+<span class="sig-name descname"><span class="pre">connector_list</span></span><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.connector_list" title="Link to this definition">#</a></dt>
+<dd><p>List of parsed connector anchors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw">ConnectorAnchorRaw</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.shape_list">
+<span class="sig-name descname"><span class="pre">shape_list</span></span><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.shape_list" title="Link to this definition">#</a></dt>
+<dd><p>List of parsed shape anchors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw">ShapeAnchorRaw</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">namespaces</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id3" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">connector_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw"><span class="pre">ConnectorAnchorRaw</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id4" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">shape_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw"><span class="pre">ShapeAnchorRaw</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id5" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw"><span class="pre">ConnectorAnchorRaw</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw"><span class="pre">ShapeAnchorRaw</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_xml_parser.html#DrawingXMLParser.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.parse" title="Link to this definition">#</a></dt>
+<dd><p>Parses the drawing XML to extract connectors and shapes.</p>
+<p>Iterates over the XML elements to find and parse connectors and shapes,
+storing them in their respective lists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing
+lists of parsed connector and shape anchors.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[List[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw">ConnectorAnchorRaw</a>], List[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw">ShapeAnchorRaw</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.DrawingXMLParser._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser._abc_impl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ConnectorParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.parsers.drawing.</span></span><span class="sig-name descname"><span class="pre">ConnectorParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespaces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_element_parser/connector_parser.html#ConnectorParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser" title="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDrawingParser</span></code></a>[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectorAnchorRaw</span></code></a>, <a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectorRaw</span></code></a>]</p>
+<p>Parser for the connector element.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ConnectorParser.parse_line_element">
+<span class="sig-name descname"><span class="pre">parse_line_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line_el</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Element</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ArrowLine" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ArrowLine"><span class="pre">ArrowLine</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_element_parser/connector_parser.html#ConnectorParser.parse_line_element"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser.parse_line_element" title="Link to this definition">#</a></dt>
+<dd><p>Parses the &lt;a:ln&gt; element and returns an ArrowLine type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>line_el</strong> (<em>ET.Element</em>) – The &lt;a:ln&gt; element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The ArrowLine type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ArrowLine" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ArrowLine">ArrowLine</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ConnectorParser.parse_text">
+<span class="sig-name descname"><span class="pre">parse_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_el</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Element</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_element_parser/connector_parser.html#ConnectorParser.parse_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser.parse_text" title="Link to this definition">#</a></dt>
+<dd><p>Parses the &lt;xdr:txBody&gt; element and returns a text string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text_el</strong> (<em>ET.Element</em>) – The &lt;xdr:txBody&gt; element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The text string.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the text element is not found.</p>
+</dd>
+</dl>
+<p>TODO:
+- Text parsing is not implemented when the text contains multiple formats.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ConnectorParser._parse_drawing">
+<span class="sig-name descname"><span class="pre">_parse_drawing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Element</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw"><span class="pre">ConnectorRaw</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_element_parser/connector_parser.html#ConnectorParser._parse_drawing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser._parse_drawing" title="Link to this definition">#</a></dt>
+<dd><p>Parses the drawing element and returns a ConnectorRaw object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>element</strong> (<em>ET.Element</em>) – The drawing element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parsed ConnectorRaw object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw">ConnectorRaw</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ConnectorParser._create_anchor_raw">
+<span class="sig-name descname"><span class="pre">_create_anchor_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">anchor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor" title="spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor"><span class="pre">Anchor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">drawing_raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw"><span class="pre">ConnectorRaw</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw"><span class="pre">ConnectorAnchorRaw</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_element_parser/connector_parser.html#ConnectorParser._create_anchor_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser._create_anchor_raw" title="Link to this definition">#</a></dt>
+<dd><p>Creates a ConnectorAnchorRaw object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>anchor</strong> (<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor" title="spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor"><em>Anchor</em></a>) – The anchor object.</p></li>
+<li><p><strong>drawing_raw</strong> (<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorRaw"><em>ConnectorRaw</em></a>) – The drawing raw object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The created ConnectorAnchorRaw object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ConnectorAnchorRaw">ConnectorAnchorRaw</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ConnectorParser._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser._abc_impl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ShapeParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spreadsheet_intelligence.parsers.drawing.</span></span><span class="sig-name descname"><span class="pre">ShapeParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespaces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_element_parser/shape_parser.html#ShapeParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ShapeParser" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.html#spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser" title="spreadsheet_intelligence.parsers.drawing.drawing_element_parser.base_drawing_parser.BaseDrawingParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDrawingParser</span></code></a>[<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapeAnchorRaw</span></code></a>, <a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShapeRaw</span></code></a>]</p>
+<p>Parser for the shape element.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ShapeParser._parse_text">
+<span class="sig-name descname"><span class="pre">_parse_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_el</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Element</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_element_parser/shape_parser.html#ShapeParser._parse_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ShapeParser._parse_text" title="Link to this definition">#</a></dt>
+<dd><p>Parses the text element and returns the text string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text_el</strong> (<em>ET.Element</em>) – The text element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parsed text string.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the text element is not found.</p>
+</dd>
+</dl>
+<p>TODO:
+- Text parsing is not implemented when the text contains multiple formats.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ShapeParser._parse_drawing">
+<span class="sig-name descname"><span class="pre">_parse_drawing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Element</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw"><span class="pre">ShapeRaw</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_element_parser/shape_parser.html#ShapeParser._parse_drawing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ShapeParser._parse_drawing" title="Link to this definition">#</a></dt>
+<dd><p>Parses the drawing element and returns a ShapeRaw object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>element</strong> (<em>ET.Element</em>) – The drawing element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parsed ShapeRaw object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw">ShapeRaw</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ShapeParser._create_anchor_raw">
+<span class="sig-name descname"><span class="pre">_create_anchor_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">anchor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor" title="spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor"><span class="pre">Anchor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">drawing_raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw"><span class="pre">ShapeRaw</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw"><span class="pre">ShapeAnchorRaw</span></a></span></span><a class="reference internal" href="_modules/spreadsheet_intelligence/parsers/drawing/drawing_element_parser/shape_parser.html#ShapeParser._create_anchor_raw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ShapeParser._create_anchor_raw" title="Link to this definition">#</a></dt>
+<dd><p>Creates a ShapeAnchorRaw object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>anchor</strong> (<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor" title="spreadsheet_intelligence.models.raw.drawing.anchor_models.Anchor"><em>Anchor</em></a>) – The anchor object.</p></li>
+<li><p><strong>drawing_raw</strong> (<a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeRaw"><em>ShapeRaw</em></a>) – The drawing raw object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The created ShapeAnchorRaw object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw" title="spreadsheet_intelligence.models.raw.drawing.drawing_models.ShapeAnchorRaw">ShapeAnchorRaw</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="spreadsheet_intelligence.parsers.drawing.ShapeParser._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#spreadsheet_intelligence.parsers.drawing.ShapeParser._abc_impl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-spreadsheet_intelligence.parsers.drawing.drawing_xml_parser">spreadsheet_intelligence.parsers.drawing.drawing_xml_parser module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.namespaces"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.namespaces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.xml_root"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.xml_root</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.connector_list"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.connector_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.shape_list"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.shape_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.namespaces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.connector_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.shape_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser.parse"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.parse()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.drawing_xml_parser.DrawingXMLParser._abc_impl"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-spreadsheet_intelligence.parsers.drawing">Module contents</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.namespaces"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.namespaces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.xml_root"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.xml_root</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.connector_list"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.connector_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.shape_list"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.shape_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.namespaces</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.connector_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.shape_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser.parse"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser.parse()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.DrawingXMLParser._abc_impl"><code class="docutils literal notranslate"><span class="pre">DrawingXMLParser._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser"><code class="docutils literal notranslate"><span class="pre">ConnectorParser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser.parse_line_element"><code class="docutils literal notranslate"><span class="pre">ConnectorParser.parse_line_element()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser.parse_text"><code class="docutils literal notranslate"><span class="pre">ConnectorParser.parse_text()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser._parse_drawing"><code class="docutils literal notranslate"><span class="pre">ConnectorParser._parse_drawing()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser._create_anchor_raw"><code class="docutils literal notranslate"><span class="pre">ConnectorParser._create_anchor_raw()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ConnectorParser._abc_impl"><code class="docutils literal notranslate"><span class="pre">ConnectorParser._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ShapeParser"><code class="docutils literal notranslate"><span class="pre">ShapeParser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ShapeParser._parse_text"><code class="docutils literal notranslate"><span class="pre">ShapeParser._parse_text()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ShapeParser._parse_drawing"><code class="docutils literal notranslate"><span class="pre">ShapeParser._parse_drawing()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ShapeParser._create_anchor_raw"><code class="docutils literal notranslate"><span class="pre">ShapeParser._create_anchor_raw()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spreadsheet_intelligence.parsers.drawing.ShapeParser._abc_impl"><code class="docutils literal notranslate"><span class="pre">ShapeParser._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/spreadsheet_intelligence.parsers.drawing.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Shue Shiinoki, Galirage, Inc..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
