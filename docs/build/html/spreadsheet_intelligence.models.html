@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>spreadsheet_intelligence.models package &#8212; spreadsheet-intelligence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'spreadsheet_intelligence.models';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">spreadsheet-intelligence</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    spreadsheet_intelligence
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    spreadsheet_intelligence
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="spreadsheet_intelligence.models.common.html">spreadsheet_intelligence.models.common package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html">spreadsheet_intelligence.models.converted package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="spreadsheet_intelligence.models.raw.html">spreadsheet_intelligence.models.raw package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html">spreadsheet_intelligence.models.raw.drawing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html">spreadsheet_intelligence.models.raw.theme package</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">spreadsheet_intelligence.models package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="spreadsheet-intelligence-models-package">
+<h1>spreadsheet_intelligence.models package<a class="headerlink" href="#spreadsheet-intelligence-models-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spreadsheet_intelligence.models.common.html">spreadsheet_intelligence.models.common package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#module-spreadsheet_intelligence.models.common.common_data">spreadsheet_intelligence.models.common.common_data module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color"><code class="docutils literal notranslate"><span class="pre">Color</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color.hex_code"><code class="docutils literal notranslate"><span class="pre">Color.hex_code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color.r"><code class="docutils literal notranslate"><span class="pre">Color.r</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color.g"><code class="docutils literal notranslate"><span class="pre">Color.g</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color.b"><code class="docutils literal notranslate"><span class="pre">Color.b</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color.alpha"><code class="docutils literal notranslate"><span class="pre">Color.alpha</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color._validate_alpha"><code class="docutils literal notranslate"><span class="pre">Color._validate_alpha()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color._hex_to_rgb"><code class="docutils literal notranslate"><span class="pre">Color._hex_to_rgb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color.to_rgba"><code class="docutils literal notranslate"><span class="pre">Color.to_rgba()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.common_data.Color.adjust_color"><code class="docutils literal notranslate"><span class="pre">Color.adjust_color()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#module-spreadsheet_intelligence.models.common.enums">spreadsheet_intelligence.models.common.enums module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.FourDirection"><code class="docutils literal notranslate"><span class="pre">FourDirection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.FourDirection.UP"><code class="docutils literal notranslate"><span class="pre">FourDirection.UP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.FourDirection.RIGHT"><code class="docutils literal notranslate"><span class="pre">FourDirection.RIGHT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.FourDirection.DOWN"><code class="docutils literal notranslate"><span class="pre">FourDirection.DOWN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.FourDirection.LEFT"><code class="docutils literal notranslate"><span class="pre">FourDirection.LEFT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.FourDirection.flip"><code class="docutils literal notranslate"><span class="pre">FourDirection.flip()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.FourDirection.flip_h"><code class="docutils literal notranslate"><span class="pre">FourDirection.flip_h()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.FourDirection.flip_v"><code class="docutils literal notranslate"><span class="pre">FourDirection.flip_v()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.FourDirection.rotate"><code class="docutils literal notranslate"><span class="pre">FourDirection.rotate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.FourDirection.i_rotate"><code class="docutils literal notranslate"><span class="pre">FourDirection.i_rotate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ConnectorType"><code class="docutils literal notranslate"><span class="pre">ConnectorType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ConnectorType.BENT_CONNECTOR_3"><code class="docutils literal notranslate"><span class="pre">ConnectorType.BENT_CONNECTOR_3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ConnectorType.STRAIGHT_CONNECTOR_1"><code class="docutils literal notranslate"><span class="pre">ConnectorType.STRAIGHT_CONNECTOR_1</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ShapeType"><code class="docutils literal notranslate"><span class="pre">ShapeType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ShapeType.RECT"><code class="docutils literal notranslate"><span class="pre">ShapeType.RECT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ShapeType.ROUND_RECT"><code class="docutils literal notranslate"><span class="pre">ShapeType.ROUND_RECT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ArrowType"><code class="docutils literal notranslate"><span class="pre">ArrowType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ArrowType.BIDIRECTIONAL"><code class="docutils literal notranslate"><span class="pre">ArrowType.BIDIRECTIONAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ArrowType.UNIDIRECTIONAL"><code class="docutils literal notranslate"><span class="pre">ArrowType.UNIDIRECTIONAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.ArrowType.NONE"><code class="docutils literal notranslate"><span class="pre">ArrowType.NONE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.LineType"><code class="docutils literal notranslate"><span class="pre">LineType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.LineType.SOLID"><code class="docutils literal notranslate"><span class="pre">LineType.SOLID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.LineType.DASH"><code class="docutils literal notranslate"><span class="pre">LineType.DASH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.LineType.SYS_DOT"><code class="docutils literal notranslate"><span class="pre">LineType.SYS_DOT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.LineType.SYS_DASH"><code class="docutils literal notranslate"><span class="pre">LineType.SYS_DASH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.LineType.DASH_DOT"><code class="docutils literal notranslate"><span class="pre">LineType.DASH_DOT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.LineType.LG_DASH"><code class="docutils literal notranslate"><span class="pre">LineType.LG_DASH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.LineType.LG_DASH_DOT"><code class="docutils literal notranslate"><span class="pre">LineType.LG_DASH_DOT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#spreadsheet_intelligence.models.common.enums.LineType.LG_DASH_DOT_DOT"><code class="docutils literal notranslate"><span class="pre">LineType.LG_DASH_DOT_DOT</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.common.html#module-spreadsheet_intelligence.models.common">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html">spreadsheet_intelligence.models.converted package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#module-spreadsheet_intelligence.models.converted.base_models">spreadsheet_intelligence.models.converted.base_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.base_models.BaseDrawingConverted"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverted</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.base_models.BaseDrawingConverted.raw_id"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverted.raw_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.base_models.BaseDrawingConverted.name"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverted.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.base_models.BaseDrawingConverted.drawing_id"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverted.drawing_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id0"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverted.raw_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id1"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverted.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id2"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverted.drawing_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.base_models.BaseDrawingConverted._abc_impl"><code class="docutils literal notranslate"><span class="pre">BaseDrawingConverted._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#module-spreadsheet_intelligence.models.converted.drawing_models">spreadsheet_intelligence.models.converted.drawing_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector"><code class="docutils literal notranslate"><span class="pre">Connector</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector.arrow_type"><code class="docutils literal notranslate"><span class="pre">Connector.arrow_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector.head_pos"><code class="docutils literal notranslate"><span class="pre">Connector.head_pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector.tail_pos"><code class="docutils literal notranslate"><span class="pre">Connector.tail_pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector.line_type"><code class="docutils literal notranslate"><span class="pre">Connector.line_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector.line_color"><code class="docutils literal notranslate"><span class="pre">Connector.line_color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector.line_width"><code class="docutils literal notranslate"><span class="pre">Connector.line_width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector.head_type"><code class="docutils literal notranslate"><span class="pre">Connector.head_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector.tail_type"><code class="docutils literal notranslate"><span class="pre">Connector.tail_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id3"><code class="docutils literal notranslate"><span class="pre">Connector.arrow_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id4"><code class="docutils literal notranslate"><span class="pre">Connector.head_pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id5"><code class="docutils literal notranslate"><span class="pre">Connector.tail_pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id6"><code class="docutils literal notranslate"><span class="pre">Connector.line_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id7"><code class="docutils literal notranslate"><span class="pre">Connector.line_color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id8"><code class="docutils literal notranslate"><span class="pre">Connector.line_width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id9"><code class="docutils literal notranslate"><span class="pre">Connector.head_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#id10"><code class="docutils literal notranslate"><span class="pre">Connector.tail_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector.plot"><code class="docutils literal notranslate"><span class="pre">Connector.plot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Connector._abc_impl"><code class="docutils literal notranslate"><span class="pre">Connector._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.StraightConnector1"><code class="docutils literal notranslate"><span class="pre">StraightConnector1</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.StraightConnector1._abc_impl"><code class="docutils literal notranslate"><span class="pre">StraightConnector1._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.BentConnector3"><code class="docutils literal notranslate"><span class="pre">BentConnector3</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.BentConnector3.head_direction"><code class="docutils literal notranslate"><span class="pre">BentConnector3.head_direction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.BentConnector3.tail_direction"><code class="docutils literal notranslate"><span class="pre">BentConnector3.tail_direction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.BentConnector3.plot"><code class="docutils literal notranslate"><span class="pre">BentConnector3.plot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.BentConnector3._plot_arrow"><code class="docutils literal notranslate"><span class="pre">BentConnector3._plot_arrow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.BentConnector3._abc_impl"><code class="docutils literal notranslate"><span class="pre">BentConnector3._abc_impl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Text"><code class="docutils literal notranslate"><span class="pre">Text</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Text.content"><code class="docutils literal notranslate"><span class="pre">Text.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Text.font_color"><code class="docutils literal notranslate"><span class="pre">Text.font_color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Text.font_size"><code class="docutils literal notranslate"><span class="pre">Text.font_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Text.alignment"><code class="docutils literal notranslate"><span class="pre">Text.alignment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Text.plot"><code class="docutils literal notranslate"><span class="pre">Text.plot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape"><code class="docutils literal notranslate"><span class="pre">Shape</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape.shape_type"><code class="docutils literal notranslate"><span class="pre">Shape.shape_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape.fill_color"><code class="docutils literal notranslate"><span class="pre">Shape.fill_color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape.border_color"><code class="docutils literal notranslate"><span class="pre">Shape.border_color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape.x"><code class="docutils literal notranslate"><span class="pre">Shape.x</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape.y"><code class="docutils literal notranslate"><span class="pre">Shape.y</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape.width"><code class="docutils literal notranslate"><span class="pre">Shape.width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape.height"><code class="docutils literal notranslate"><span class="pre">Shape.height</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape.text"><code class="docutils literal notranslate"><span class="pre">Shape.text</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape.plot"><code class="docutils literal notranslate"><span class="pre">Shape.plot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#spreadsheet_intelligence.models.converted.drawing_models.Shape._abc_impl"><code class="docutils literal notranslate"><span class="pre">Shape._abc_impl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.converted.html#module-spreadsheet_intelligence.models.converted">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spreadsheet_intelligence.models.raw.html">spreadsheet_intelligence.models.raw package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.raw.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html">spreadsheet_intelligence.models.raw.drawing package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#module-spreadsheet_intelligence.models.raw.drawing.anchor_models">spreadsheet_intelligence.models.raw.drawing.anchor_models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#module-spreadsheet_intelligence.models.raw.drawing.base_models">spreadsheet_intelligence.models.raw.drawing.base_models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#module-spreadsheet_intelligence.models.raw.drawing.drawing_models">spreadsheet_intelligence.models.raw.drawing.drawing_models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.raw.drawing.html#module-spreadsheet_intelligence.models.raw.drawing">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html">spreadsheet_intelligence.models.raw.theme package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#module-spreadsheet_intelligence.models.raw.theme.theme_models">spreadsheet_intelligence.models.raw.theme.theme_models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spreadsheet_intelligence.models.raw.theme.html#module-spreadsheet_intelligence.models.raw.theme">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spreadsheet_intelligence.models.raw.html#module-spreadsheet_intelligence.models.raw">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-spreadsheet_intelligence.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-spreadsheet_intelligence.models" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-spreadsheet_intelligence.models">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/spreadsheet_intelligence.models.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Shue Shiinoki, Galirage, Inc..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
