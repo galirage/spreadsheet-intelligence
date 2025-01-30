@@ -1,11 +1,14 @@
 # 🔭📊 Spreadsheet Intelligence
 
-[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+[![API Reference](https://img.shields.io/badge/API-Reference-blue)](https://your-api-reference-link)
+[![PyPI version](https://img.shields.io/pypi/v/your-package-name.svg)](https://pypi.org/project/your-package-name/)
+
 
 
 ## ⚡ Quick Install
 
-With pip (coming soon):
+With pip:
 
 ```bash
 pip install spreadsheet_intelligence
@@ -16,7 +19,10 @@ pip install spreadsheet_intelligence
 
 Currently, it supports the conversion of system configuration diagrams consisting of autoshapes in Excel, and it is a powerful tool reported in our paper to overcome the limitations of VLM in diagram interpretation.
 
-{論文ブックマーク埋め込み}
+The paper is available on arXiv.
+
+[![arXiv](https://img.shields.io/badge/arXiv-Coming%20soon-red.svg)](https://arxiv.org/abs/your-paper-id)
+[![GitHub](https://img.shields.io/github/v/release/your-username/your-repo-name)](https://github.com/your-username/your-repo-name)
 
 ## 🚀 Quick Start
 ```python
