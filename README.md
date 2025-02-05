@@ -1,3 +1,13 @@
+<!-- markdownlint-disable first-line-h1 -->
+<!-- markdownlint-disable html -->
+<!-- markdownlint-disable no-duplicate-header -->
+
+<div align="center">
+  <img src="./assets/galirage_logo.png" width="100%" alt="galirage_logo" />
+</div>
+<hr>
+
+
 # 🔭📊 Spreadsheet Intelligence
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
