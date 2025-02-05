@@ -1,7 +1,7 @@
 # 🔭📊 Spreadsheet Intelligence
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![API Reference](https://img.shields.io/badge/API-Reference-blue)](https://your-api-reference-link)
+[![API Reference](https://img.shields.io/badge/API-Reference-blue)](https://github.com/galirage/spreadsheet-intelligence)
 [![PyPI version](https://img.shields.io/pypi/v/your-package-name.svg)](https://pypi.org/project/your-package-name/)
 
 
@@ -22,7 +22,7 @@ Currently, it supports the conversion of system configuration diagrams consistin
 The paper is available on arXiv.
 
 [![arXiv](https://img.shields.io/badge/arXiv-Coming%20soon-red.svg)](https://arxiv.org/abs/your-paper-id)
-[![GitHub](https://img.shields.io/github/v/release/your-username/your-repo-name)](https://github.com/your-username/your-repo-name)
+[![GitHub](https://img.shields.io/github/v/release/galirage/XMLDriven-Diagram-Understanding)](https://github.com/galirage/XMLDriven-Diagram-Understanding)
 
 ## 🚀 Quick Start
 ```python
