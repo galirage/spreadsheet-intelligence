@@ -141,5 +141,6 @@ dmypy.json
 .DS_Store
 *.csv
 *.png
+!galirage_logo.png
 data/
 out/
