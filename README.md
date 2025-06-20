@@ -2,19 +2,13 @@
 <!-- markdownlint-disable html -->
 <!-- markdownlint-disable no-duplicate-header -->
 
-<div align="center">
-  <img src="./assets/galirage_logo.png" width="100%" alt="galirage_logo" />
-</div>
-<hr>
-
+![logo](https://raw.githubusercontent.com/galirage/spreadsheet-intelligence/main/assets/galirage_logo.png)
 
 # 🔭📊 Spreadsheet Intelligence
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![API Reference](https://img.shields.io/badge/API-Reference-blue)](https://github.com/galirage/spreadsheet-intelligence)
-[![PyPI version](https://img.shields.io/pypi/v/your-package-name.svg)](https://pypi.org/project/your-package-name/)
-
-
+[![API Reference](https://img.shields.io/badge/API-Reference-blue)](https://galirage.github.io/spreadsheet-intelligence/)
+[![PyPI version](https://img.shields.io/pypi/v/your-package-name.svg)](https://pypi.org/project/spreadsheet-intelligence/)
 
 ## ⚡ Quick Install
 
@@ -31,8 +25,8 @@ Currently, it supports the conversion of system configuration diagrams consistin
 
 The paper is available on arXiv.
 
-[![arXiv](https://img.shields.io/badge/arXiv-Coming%20soon-red.svg)](https://arxiv.org/abs/your-paper-id)
-[![GitHub](https://img.shields.io/github/v/release/galirage/XMLDriven-Diagram-Understanding)](https://github.com/galirage/XMLDriven-Diagram-Understanding)
+[![arXiv](https://img.shields.io/badge/arXiv-2502.04389-blue.svg)](https://arxiv.org/abs/2502.04389)
+[![Static Badge](https://img.shields.io/badge/Github-XMLDriven--Diagram--Understanding-blue?logo=github)](https://github.com/galirage/XMLDriven-Diagram-Understanding)
 
 ## 🚀 Quick Start
 ```python
