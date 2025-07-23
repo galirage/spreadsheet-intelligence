@@ -8,7 +8,7 @@
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![API Reference](https://img.shields.io/badge/API-Reference-blue)](https://galirage.github.io/spreadsheet-intelligence/)
-[![PyPI version](https://img.shields.io/pypi/v/your-package-name.svg)](https://pypi.org/project/spreadsheet-intelligence/)
+[![PyPI version](https://img.shields.io/pypi/v/spreadsheet-intelligence.svg)](https://pypi.org/project/spreadsheet-intelligence/)
 
 ## ⚡ Quick Install
 
