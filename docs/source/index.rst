@@ -12,8 +12,8 @@
 
    modules
 
-.. image:: https://img.shields.io/badge/License-MIT-yellow.svg
-   :target: https://opensource.org/licenses/MIT
+.. image:: https://img.shields.io/badge/license-Apache%202.0-blue.svg
+   :target: https://opensource.org/licenses/Apache-2.0
 
 
 
@@ -24,7 +24,8 @@
 
 Currently, it supports the conversion of system configuration diagrams consisting of autoshapes in Excel, and it is a powerful tool reported in our paper to overcome the limitations of VLM in diagram interpretation.
 
-{論文ブックマーク埋め込み}
+.. image:: https://img.shields.io/badge/arXiv-2502.04389v1-blue.svg
+   :target: https://arxiv.org/html/2502.04389v1
 
 ⚡️ Quick Install
 --------------------------------------
