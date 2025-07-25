@@ -45,3 +45,18 @@
 - [ ] If merging to main, this PR is from develop or release/* branch
 - [ ] My code follows the project's coding standards
 - [ ] I have updated documentation/tests if required
+
+## Review Guidelines for GitHub Copilot
+<!--- Instructions for PR authors: This section provides guidelines for reviewers using GitHub Copilot -->
+<!--- DO NOT EDIT: This section should remain unchanged as it contains specific instructions for GitHub Copilot -->
+<!--- for GitHub Copilot review rule -->
+When reviewing, please use the following prefixes:
+
+- [must] → Required fixes (code doesn't work, security issues, etc.)
+- [imo (in my opinion)] → Personal opinion/suggestion (improvement ideas, best practices, etc.)
+- [no rush] → Not urgent (consider for future improvements)
+- [nits (nitspick)] → Minor suggestions (code style, naming conventions, etc.)
+- [ask] → Questions/clarifications needed (design decisions, implementation approach, etc.)
+- [fyi (for your information)] → Reference information (related technical info, background knowledge, etc.)
+- [typo] → Typo/error (variable names, comments, documentation, etc.)
+<!--- for GitHub Copilot review rule -->
